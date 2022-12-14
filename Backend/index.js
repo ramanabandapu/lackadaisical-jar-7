@@ -2,6 +2,8 @@ const express = require("express")
 const cors = require("cors")
 
 const {connection} = require("./config/db")
+const {carsRouter} = require("./Routes/cars.route")
+
 const app = express()
 
 
@@ -16,6 +18,9 @@ app.use(cors({
 app.get("/", (req, res) => {
     res.send(`msg:Welcome To Dashboard`)
 })
+
+app.use("/cars",carsRouter)
+
 
 
 
