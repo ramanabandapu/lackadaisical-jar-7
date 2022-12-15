@@ -14,7 +14,7 @@ const carSchema = mongoose.Schema({
      img3:String
 })
 
-const CarModel = mongoose.model("cars", carSchema)
+const CarModel = mongoose.model("car", carSchema)
 
 module.exports = {
     CarModel

@@ -4,16 +4,17 @@ const carsRouter = express.Router()
 
 carsRouter.get("/cars",async(req,res) =>{
     try{
-        const car = await CarModel.find({})
+        const car = await  CarModel.find({})
         // console.log(res.send(car));
         res.send(car)
-    }
+     }
     catch(err){
         res.send({msg:"Somthing Wrong",error:err})
     }
-    
-   
 })
+
+
+
 const searchProduct = async (req, res) => {
     let { q } = req.query;
     try {
