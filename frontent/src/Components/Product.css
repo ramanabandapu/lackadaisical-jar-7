@@ -1,0 +1,48 @@
+#vertical-line{
+    width:1px;
+    height: 600px;
+    margin-top: -1200px;
+    margin-left: 300px;
+    background-color: #000000;
+    }
+
+    .AccordionItem {
+        border: 1px solid rgb(153, 150, 150);
+        border-radius: 10px;
+        padding: 4px;
+        margin-top: 9px;
+      }
+      .wRdrop_down {
+        width: 46%;
+        margin-left: 30px;
+        margin-top:10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+      }
+      
+
+      .mainpage{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+        margin-left: 300px;
+        margin-top: -900px;
+        cursor: pointer;
+        
+        /* border: 1px solid black; */
+       
+    
+    }
+    .mainpage>div{
+        height:360px;
+        gap: "20px";
+       /* border: 1px solid black; */
+         /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;   */
+    }
+    .mainpage>div>img{
+        width: 100%;
+        margin-left: 25px;
+        height: 100px;
+        
+    }
