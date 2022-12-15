@@ -14,7 +14,7 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 50000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -51,9 +51,11 @@ export default function SPImageCarousel() {
       />
       {/* Left Icon */}
       <IconButton
-        size="xs"
+        size="lg"
+        color={"white"}
         aria-label="left-arrow"
         borderRadius="full"
+        bg="transparent"
         position="absolute"
         left={side}
         top={top}
@@ -65,9 +67,11 @@ export default function SPImageCarousel() {
       </IconButton>
       {/* Right Icon */}
       <IconButton
-        size="xs"
+        size="lg"
         aria-label="right-arrow"
         borderRadius="full"
+        bg="transparent"
+        color="white"
         position="absolute"
         right={side}
         top={top}
@@ -81,15 +85,15 @@ export default function SPImageCarousel() {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((url, index) => (
           <Box
-            border="solid 1px red"
             key={index}
             width="100%"
             h="25rem"
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize="cover"
+            backgroundSize="initial"
             backgroundImage={`url(${url})`}
+            borderRadius="0.3rem 0.3rem 0rem 0rem"
           />
         ))}
       </Slider>
