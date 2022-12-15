@@ -1,9 +1,16 @@
-import React from 'react'
+import { Box } from "@chakra-ui/react";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "../Components/HomePage";
 
 const MainRoutes = () => {
   return (
-    <div>MainRoutes</div>
-  )
-}
+    <Box>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Box>
+  );
+};
 
-export default MainRoutes
+export default MainRoutes;
