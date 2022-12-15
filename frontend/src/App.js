@@ -1,16 +1,20 @@
-import Signup from './Components/Signup';
-import './App.css';
-import Login from './Components/Login';
 
 
+
+import "./App.css";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
 
 
 function App() {
   return (
     <div className="App">
-     <Signup/>
-<Login/>
-    
+
+
+      <Navbar />
+      <Footer/>
+
+
     </div>
   );
 }
