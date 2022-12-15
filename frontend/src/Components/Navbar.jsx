@@ -1,19 +1,6 @@
 import React from "react";
-import {
-  Box,
-  Image,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Button,
-  Select,
-  FormControl,
-  Input,
-  Text,
-  IconButton,
-} from "@chakra-ui/react";
-import { ChevronDownIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
+import { Box, Image, Select, Input, Text, IconButton } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   return (
@@ -27,6 +14,7 @@ const Navbar = () => {
         alignItems="center"
       >
         {/* <Box border="1px solid teal"> */}
+        {/* Logo */}
         <Image
           cursor="pointer"
           w="5%"
@@ -34,6 +22,7 @@ const Navbar = () => {
           alt="logo"
         />
         {/* </Box> */}
+        {/* Location Box */}
         <Box w="15%" h="80%" border="1px solid black">
           <Select
             bg="whiteAlpha.800"
@@ -46,6 +35,7 @@ const Navbar = () => {
             <option value="option3">Patna</option>
           </Select>
         </Box>
+        {/*Search Box *****************************************/}
         <Box
           border="1px solid blue"
           bg="blue"
