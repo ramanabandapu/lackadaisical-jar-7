@@ -3,6 +3,7 @@
 import { Button, Heading, Input, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
 import axios from  "axios"
+import { useNavigate } from "react-router-dom";
 
 function Signup({onClose}) {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ function Signup({onClose}) {
     password: "",
   });
   const toast = useToast()
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -30,10 +33,11 @@ function Signup({onClose}) {
         toast({
           title: res.data,
           status: "success",
-          duration: 2000,
+          duration: 1000,
           isClosable: true,
           position: "top-left"
         });
+        navigate("/login");
       })
       .catch((err) => {
         console.log(err);
@@ -41,7 +45,7 @@ function Signup({onClose}) {
   };
   return (
     <div className="signup">
-    <form onSubmit={handleSubmit} style={{ width: "90%", textAlign: "center" }}>
+    <form onSubmit={handleSubmit} style={{ width: "95%", textAlign: "center", margin:"auto"}}>
       {/* <Heading>Signup</Heading> */}
       <br />
       <Input
