@@ -23,7 +23,9 @@ app.get("/", (req, res) => {
   app.use("/",carsRouter)
 
 
+  app.post("/signup", userSignup);
 
+  app.post("/login", userLogin);
 
 app.listen(6050, async () => {
     try{
