@@ -57,7 +57,7 @@ function Login({onClose}) {
       });
   };
   return (
-    <form onSubmit={handleSubmit} style={{ width: "90%", textAlign: "center" }}>
+    <form onSubmit={handleSubmit} style={{ width: "95%", textAlign: "center", margin:"auto"}}>
       {/* <Heading>Login</Heading> */}
       <br />
       <Input
