@@ -3,8 +3,15 @@ const { carsData } = require("../Controllers/cars.controller")
 
 const carsRouter = express.Router()
 
-
-carsRouter.get("/", carsData)
+carsRouter.get("/cars",async(req,res) =>{
+    try{
+        const car = await  CarModel.find({})
+        res.send(car)
+     }
+    catch(err){
+        res.send({msg:"Somthing Wrong",error:err})
+    }
+})
 
 
 

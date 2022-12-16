@@ -3,7 +3,9 @@ const cors = require("cors")
 
 const {connection} = require("./config/db")
 const { carsRouter } = require("./Routes/cars.route")
-const {CarModel} = require("./Models/Car.model")
+const { bikesRouter } = require("./Routes/bikes.route")
+const { mobileRouter } = require("./Routes/mobiles.route")
+const { mixRouter } = require("./Routes/mixdata.route")
 const app = express()
 
 
@@ -21,6 +23,9 @@ app.get("/", (req, res) => {
 })
 
   app.use("/",carsRouter)
+  app.use("/",bikesRouter)
+  app.use("/",mobileRouter)
+  app.use("/",mixRouter)
 
 
   app.post("/signup", userSignup);
