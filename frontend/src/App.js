@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
 
-       {/* <Car/> */}
-       <Motor/>
+       <Car/>
+       {/* <Motor/> */}
 
     </div>
   );
