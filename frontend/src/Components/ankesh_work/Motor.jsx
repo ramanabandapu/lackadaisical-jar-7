@@ -1,11 +1,13 @@
+
+ 
 import { Text,Box,Flex,Image, Input, Accordion,AccordionIcon,AccordionButton,AccordionItem,AccordionPanel, Button } from '@chakra-ui/react'
 import "./Car.css"
-import Brand from "../Image/Brand1.PNG"
-import { Link } from '@chakra-ui/react'
+import Brand from "../ankesh_work/Image/Brand1.PNG"
+ 
 import { FaRupeeSign} from 'react-icons/fa';
 
 import { useEffect, useState } from 'react'
-const Car=()=>{
+const Motor=()=>{
 
   const [data, setData] = useState([])
 
@@ -54,7 +56,7 @@ const Car=()=>{
            marginLeft="20px"
            width="70%"
            height="70%"
-           src='https://tpc.googlesyndication.com/simgad/7387030024057372507?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qktieZP_Sd13GBkR0FBdRnHsxbmqw'
+           src='https://tpc.googlesyndication.com/simgad/4754367391051086379?sqp=4sqPyQQ7QjkqNxABHQAAtEIgASgBMAk4A0DwkwlYAWBfcAKAAQGIAQGdAQAAgD-oAQGwAYCt4gS4AV_FAS2ynT4&rs=AOga4qmj8Gf8-WfcfbOWpUHpWvLKyJdRhg'
            
              />
          </center>
@@ -66,8 +68,8 @@ const Car=()=>{
         
         {/* Home section */}
 
-       <Text color='grey' marginLeft="-974px">Home</Text>
-       <Text as='b' fontSize='20px' marginLeft="-847px">Used Cars in India</Text>
+       <Text color='grey' marginLeft="-937px">Home/Bike</Text>
+       <Text as='b' fontSize='20px' marginLeft="-840px">Used Bikes in India</Text>
       
       {/* DROP DOWN */}
 
@@ -91,8 +93,18 @@ const Car=()=>{
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel textAlign="left">
-              Cars (3,28,194)
+              <AccordionPanel  marginTop="-7px"  textAlign="left">
+             Bikes  
+              </AccordionPanel>
+              <AccordionPanel  marginTop="-15px"  textAlign="left">
+             Motorcycles (1,28,194)
+              </AccordionPanel>
+              <AccordionPanel  marginTop="-15px"  textAlign="left">
+             Scooters (39,194)
+              </AccordionPanel>
+
+              <AccordionPanel  marginTop="-15px"  textAlign="left">
+             Spare  Parts (8,194)
               </AccordionPanel>
             </AccordionItem>
 
@@ -186,16 +198,19 @@ const Car=()=>{
                 </AccordionButton>
               </h2>
               <AccordionPanel marginTop="-8px"  textAlign="left">
-                Maruti Suzuki (1,06,919)
+             Bajaj (1,06,919)
               </AccordionPanel>
               <AccordionPanel marginTop="-15px"  textAlign="left">
-              Hyundai (55,904)
+              Royal Enfield (55,904)
               </AccordionPanel>
               <AccordionPanel marginTop="-15px"  textAlign="left">
-              Mahindra (28,779)
+              Hero (67,779)
               </AccordionPanel>
               <AccordionPanel marginTop="-15px"  textAlign="left">
-               Honda (21,877)
+               Honda (14,877)
+              </AccordionPanel>
+              <AccordionPanel marginTop="-15px"  textAlign="left">
+               Yamaha(81,877)
               </AccordionPanel>
             </AccordionItem>
 
@@ -223,16 +238,16 @@ const Car=()=>{
                 </AccordionButton>
               </h2>
               <AccordionPanel  marginTop="-8px"  textAlign="left">
-               A8l
+            Bajaj Avenger
               </AccordionPanel>
               <AccordionPanel  marginTop="-15px"  textAlign="left">
-            Ambassador Ambassador
+            Bajaj CT 100
               </AccordionPanel>
               <AccordionPanel  marginTop="-15px"  textAlign="left">
-             Ashok Leyland Stile
+             Bajaj Discover
               </AccordionPanel>
               <AccordionPanel marginTop="-15px" textAlign="left">
-             Aston Martin DB11
+             Bajaj Platina
               </AccordionPanel>
             </AccordionItem>
 
@@ -481,7 +496,7 @@ const Car=()=>{
   </Box>
 
      <hr />
-      <Box marginLeft="348px" marginTop=" -3422px" width="500px" className="wRdrop_down">
+      <Box marginLeft="350px" marginTop="-3422px" width="500px" className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
             backgroundColor="white"
@@ -538,10 +553,4 @@ const Car=()=>{
     </Box>
     )
 }
-export default Car
-
-
-
-
-
-
+export default Motor
