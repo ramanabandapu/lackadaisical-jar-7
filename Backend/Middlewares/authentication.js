@@ -1,23 +1,21 @@
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
-
-const authenticate = (req, res, next) => {
-    const token = req.headers?.authorization?.split(" ")[1]
-    if(token){
-        const decoded = jwt.verify(token, 'hush')
-        if(decoded){
-            const userID = decoded.userID
-            req.body.userID = userID
-            next()
-        }
-        else{
-            res.send("Please login")
-        }  
+const authentication = (req, res, next) => {
+  const token = req.headers?.authorization?.split(" ")[1];
+  if (!token) {
+    res.send("Please login");
+  } else {
+    try {
+      const decoded = jwt.verify(token, process.env.secret_key);
+      req.body.userId = decoded.id;
+      next();
+    } catch (err) {
+      res.status(500).send("Please login first to add product" )
     }
-    else{
-        res.send("Please login")
-    }
-}
 
 
-module.exports = {authenticate}
+  }
+};
+
+module.exports = authentication;
