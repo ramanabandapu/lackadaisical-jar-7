@@ -6,19 +6,20 @@ import Footer from "./Components/Footer";
 import Motor from "./Components/ankesh_work/Motor";import Navbar from "./Components/Navbar";
 
 import MainRoutes from "./Routes/MainRoutes";
+import HomePage from "./Components/HomePage";
 
 
 function App() {
   return (
     <div className="App">
-<LoginDrawer/>
-<SignupDrawer/>
-{/* <HomeSection/> */}
-{/* <Login/> */}
+{/* <LoginDrawer/> */}
+{/* <SignupDrawer/> */}
+<HomePage />
 
 
-      <Navbar/>
-      <MainRoutes/>
+
+      {/* <Navbar/> */}
+      {/* <MainRoutes/> */}
 <Footer/>
 
     </div>
