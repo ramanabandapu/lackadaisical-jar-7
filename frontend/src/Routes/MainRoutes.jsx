@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Car from "../Components/ankesh_work/Car";
 import Motor from "../Components/ankesh_work/Motor";
 import HomePage from "../Components/HomePage";
+import { LoginDrawer } from "../Components/LoginDrawer";
+import { SignupDrawer } from "../Components/SignupDrawer";
 import SingleProductPage from "./SingleProductPage";
 
 const MainRoutes = () => {
@@ -14,6 +16,9 @@ const MainRoutes = () => {
         <Route path="/page" element={<SingleProductPage />} />
         <Route path="/car" element={<Car/>}/>
         <Route path="/motor" element={<Motor/>}/>
+        <Route path="/signup" element={<SignupDrawer/>}/>
+        <Route path="/login" element={<LoginDrawer/>}/>
+
       </Routes>
     </Box>
   );

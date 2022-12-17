@@ -2,8 +2,11 @@
 import "./App.css";
 
 import Footer from "./Components/Footer";
+import { LoginDrawer } from "./Components/LoginDrawer";
 
-import Motor from "./Components/ankesh_work/Motor";import Navbar from "./Components/Navbar";
+
+import Navbar from "./Components/Navbar";
+import { SignupDrawer } from "./Components/SignupDrawer";
 
 import MainRoutes from "./Routes/MainRoutes";
 
@@ -11,8 +14,8 @@ import MainRoutes from "./Routes/MainRoutes";
 function App() {
   return (
     <div className="App">
-<LoginDrawer/>
-<SignupDrawer/>
+{/* <LoginDrawer/>
+<SignupDrawer/> */}
 {/* <HomeSection/> */}
 {/* <Login/> */}
 
