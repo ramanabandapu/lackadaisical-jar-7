@@ -63,7 +63,7 @@ const Footer = () => {
             </Box>
             <Box m="30px 0px 100px" display="flex" gap="10px">
               <Image src="https://statics.olx.in/external/base/img/playstore.png" />
-              <Image src="https://statics.olx.in/external/base/img/playstore.png" />
+              <Image src="https://statics.olx.in/external/base/img/appstore.webp" />
             </Box>
           </Box>
         </Box>
