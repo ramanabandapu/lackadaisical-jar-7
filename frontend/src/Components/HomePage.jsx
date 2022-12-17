@@ -8,6 +8,7 @@ import {
   Heading,
   Image,
   Img,
+  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
@@ -225,9 +226,9 @@ const HomePage = () => {
       </Box>
 
       {/*-------------- Fresh recommendations----------------------------------------------------- */}
-      <Box  width={"80%"} m="auto" mt={"50px"}>
+      <Box width={"80%"} m="auto" mt={"50px"}>
         <Heading textAlign={"left"}>Fresh recommendations</Heading>
-        <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+        {/* <Grid templateColumns="repeat(4, 1fr)" gap={6}>
           {mobileData &&
             mobileData.length > 0 &&
             mobileData.map((elem) => {
@@ -245,7 +246,26 @@ const HomePage = () => {
                 </GridItem>
               );
             })}
-        </Grid>
+        </Grid> */}
+        <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} spacing={10}>
+          {mobileData &&
+            mobileData.length > 0 &&
+            mobileData.map((elem) => {
+              return (
+                <Box
+                  // border={".5px solid gray"}
+                  // p={"15px"}
+                  boxShadow={
+                    "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;"
+                  }
+                >
+                  <Image m={"auto"} mt="10px" src={elem.imgUrl} />
+                  <Heading>{elem.name}</Heading>
+                  <Text>{elem.price}</Text>
+                </Box>
+              );
+            })}
+        </SimpleGrid>
       </Box>
     </Box>
   );
