@@ -2,8 +2,8 @@ const express = require("express")
 const cors = require("cors")
 
 const {connection} = require("./config/db")
-const { carsRouter } = require("./Routes/cars.route")
-const { bikesRouter } = require("./Routes/bikes.route")
+const {carsRouter} = require("./Routes/cars.route")
+ const { bikesRouter } = require("./Routes/bikes.route")
 const { mobileRouter } = require("./Routes/mobiles.route")
 const { mixRouter } = require("./Routes/mixdata.route")
 const app = express()
@@ -24,13 +24,14 @@ app.get("/", (req, res) => {
 
   app.use("/",carsRouter)
   app.use("/",bikesRouter)
-  app.use("/",mobileRouter)
-  app.use("/",mixRouter)
+   app.use("/",mobileRouter)
+   app.use("/",mixRouter)
 
 
-  app.post("/signup", userSignup);
+//   app.post("/signup", userSignup);
 
-  app.post("/login", userLogin);
+//   app.post("/login", userLogin);
+
 
 app.listen(6050, async () => {
     try{
