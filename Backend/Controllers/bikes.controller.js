@@ -10,4 +10,5 @@ const bikeData = async (req,res) => {
     }  
 }
 
-module.exports = {bikeData}
+
+module.exports = {bikeData,}
