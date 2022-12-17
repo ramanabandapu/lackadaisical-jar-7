@@ -1,16 +1,7 @@
 const express = require("express")
-const {MixModel} = require("../Models/mixdata.model")
+const {mixData} = require("../Controllers/mix.controller")
 const mixRouter = express.Router()
 
-mixRouter.get("/mixdatas",async(req,res) =>{
-    try{
-        const mix = await MixModel.find({})
-        res.send(mix)
-    }
-    catch(err){
-      console.log(err)
-    }
-})
-
+mixRouter.get("/mixdatas",mixData)
 
 module.exports={mixRouter}
