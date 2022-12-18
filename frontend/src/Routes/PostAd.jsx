@@ -22,22 +22,24 @@ const PostAd = () => {
 
     const handleSubmit = () => {
       const payload = {
-          name,
-          price, 
-          location,
-          description,
-          brand,
-          image,
-          img1
+        name,
+        price,
+        brand,
+        location,
+        description,
+
+        image,
+        img1,
       };
 
       fetch("https://exuberant-pantsuit-bat.cyclic.app/mobiles", {
         method: "POST",
-        body: JSON.stringify(payload),
+          body: JSON.stringify(payload),
       })
         .then((res) => res.json())
         .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+            .catch((err) => console.log(err));
+        console.log(payload);
     };
 
 
