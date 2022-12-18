@@ -5,10 +5,12 @@ import Car from "../Components/ankesh_work/Car";
 import Mobile from "../Components/ankesh_work/Mobile";
 import Motor from "../Components/ankesh_work/Motor";
 import HomePage from "../Components/HomePage";
+
 import PostAd from "./PostAd";
 import SingleProductMobile from "./SingleProductMobile";
 import SingleProductCar from "./SingleProductCar";
 import SingleProductBike from "./SingleProductBike";
+
 
 const MainRoutes = () => {
   return (
@@ -16,7 +18,11 @@ const MainRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/page" element={<SingleProductPage />} />
+    
+
+       
+        <Route path="/signup" element={<SignupDrawer/>}/>
+        <Route path="/login" element={<LoginDrawer/>}/>
 
 
         <Route path="/mobiles/:id" element={<SingleProductMobile />} />
@@ -28,17 +34,11 @@ const MainRoutes = () => {
         <Route path="/car" element={<Car />} />
         <Route path="/motor" element={<Motor />} />
         <Route path="/mobile" element={<Mobile />} />
+
       </Routes>
     </Box>
   );
 };
 
-// import React from "react";
-// import { Routes, Route } from "react-router-dom";
-// import SingleProductPage from "./SingleProductPage";
-
-// const MainRoutes = () => {
-//   return <Routes></Routes>;
-// };
 
 export default MainRoutes;
