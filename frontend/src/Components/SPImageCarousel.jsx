@@ -88,7 +88,7 @@ export default function SPImageCarousel({arr}) {
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize="initial"
+            backgroundSize="contain"
             backgroundImage={`url(${url})`}
             borderRadius="0.3rem 0.3rem 0rem 0rem"
           />
