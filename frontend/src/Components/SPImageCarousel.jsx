@@ -19,17 +19,12 @@ const settings = {
   slidesToScroll: 1,
 };
 
-export default function SPImageCarousel() {
+export default function SPImageCarousel({img1, img2}) {
   const [slider, setSlider] = useState();
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "10px" });
 
-  const cards = [
-    "https://apollo-singapore.akamaized.net/v1/files/wtr0pvwqc4qs3-IN/image;s=780x0;q=60",
-    "https://apollo-singapore.akamaized.net/v1/files/qbd97uxp2np23-IN/image;s=780x0;q=60",
-    "https://apollo-singapore.akamaized.net/v1/files/urz9b43pvnyk1-IN/image;s=780x0;q=60",
-    "https://apollo-singapore.akamaized.net/v1/files/ab9wrcbw6ibn3-IN/image;s=780x0;q=60",
-  ];
+  const cards = [img1, img2];
 
   return (
     <Box
@@ -37,6 +32,8 @@ export default function SPImageCarousel() {
       height={"100%"}
       width={"full"}
       overflow={"hidden"}
+      border="solid 1px black"
+      bg="black"
     >
       <link
         rel="stylesheet"
