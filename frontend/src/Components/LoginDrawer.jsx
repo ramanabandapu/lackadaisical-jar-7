@@ -18,7 +18,12 @@ export const LoginDrawer = () => {
   const btnRef = React.useRef();
   return (
     <Box>
-      <Text style={{ cursor: "pointer" }} ref={btnRef} onClick={onOpen} color= "blue">
+      <Text
+        style={{ cursor: "pointer" }}
+        ref={btnRef}
+        onClick={onOpen}
+        color="blue"
+      >
         Login
       </Text>
       {/* Drawer Start */}
@@ -26,13 +31,11 @@ export const LoginDrawer = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth="1px">
-          Login Here
-          </DrawerHeader>
+          <DrawerHeader borderBottomWidth="1px">Login Here</DrawerHeader>
           <DrawerBody>
             <Stack spacing="24px">
               <Box>
-                <Login onClose ={onClose}/>
+                <Login onClose={onClose} />
               </Box>
             </Stack>
           </DrawerBody>

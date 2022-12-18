@@ -41,7 +41,7 @@ const Navbar = () => {
           bg="blue"
           borderRadius="7px"
           display="flex"
-          w="50%"
+          w={{ base: "20%", sm: "20%", md: "30%", lg: "50%" }}
         >
           <Input
             bg="white"
@@ -60,9 +60,9 @@ const Navbar = () => {
         <Box cursor="pointer">
           <Text>Sign Up</Text>
         </Box>
-        <Box cursor="pointer">
+        {/* <Box cursor="pointer">
           <Text>Login</Text>
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );
