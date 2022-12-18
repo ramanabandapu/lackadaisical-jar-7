@@ -4,9 +4,9 @@ import { BsFacebook, BsInstagram, BsPlayBtn, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <Box bg="#ebeeef" p={[0, 3, 3, 10]} mt={"50px"}>
+    <Box bg="#ebeeef" p={[0, 3, 2, 10]} mt={"50px"}>
       <Box
-        ml={[0, 100, 150]}
+        ml={[0, 70, 120]}
         display="flex"
         padding={"10px"}
         justifyContent="space-between"
@@ -21,7 +21,7 @@ const Footer = () => {
           <Text color={"rgba(0,47,52,.64)"}>Pune</Text>
         </Box>
         <Box textAlign="left">
-          <Heading mb={"20px"} size="md">
+          <Heading mb={"20px"} size="sm">
             TRENDING LOCATIONS
           </Heading>
           <Text color={"rgba(0,47,52,.64)"}>Bhubneshwar</Text>
@@ -30,7 +30,7 @@ const Footer = () => {
           <Text color={"rgba(0,47,52,.64)"}>Nashi</Text>
         </Box>
         <Box textAlign="left">
-          <Heading mb={"20px"} size="md">
+          <Heading mb={"20px"} size="sm">
             ABOUT US
           </Heading>
           <Text color={"rgba(0,47,52,.64)"}>About OLX Group</Text>
@@ -40,12 +40,12 @@ const Footer = () => {
           <Text color={"rgba(0,47,52,.64)"}>Waah Jobs</Text>
         </Box>
         <Box textAlign="left">
-          <Heading mb={"20px"} size="md">
+          <Heading mb={"20px"} size="sm">
             OLX
           </Heading>
           <Text color={"rgba(0,47,52,.64)"}>Help</Text>
           <Text color={"rgba(0,47,52,.64)"}>Sitemap</Text>
-          <Text maxWidth={"15px"} noOfLines={2} color={"rgba(0,47,52,.64)"}>
+          <Text maxWidth={"70px"} noOfLines={1} color={"rgba(0,47,52,.64)"}>
             Legal & Privacy information
           </Text>
           <Text color={"rgba(0,47,52,.64)"}>Blog</Text>
@@ -55,7 +55,7 @@ const Footer = () => {
           display={{ base: "none", sm: "none", md: "block", lg: "block" }}
           lineHeight={"10px"}
         >
-          <Heading size="md">GET YOUR APP TODAY</Heading>
+          <Heading size="sm">GET YOUR APP TODAY</Heading>
           <Box>
             <Heading m="10px 0px 10px" size="sm" textAlign="left">
               Follow us

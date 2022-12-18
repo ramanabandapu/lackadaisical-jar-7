@@ -1,6 +1,17 @@
 import React from "react";
-import { Box, Image, Select, Input, Text, IconButton } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Image,
+  Select,
+  Input,
+  Text,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
+import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   return (
@@ -9,7 +20,7 @@ const Navbar = () => {
         border="1px solid green"
         justifyContent="space-evenly"
         justifyItems="center"
-        display="flex"
+        display={{ base: "none", sm: "none", md: "flex", lg: "flex" }}
         textAlign="center"
         alignItems="center"
       >
@@ -60,9 +71,85 @@ const Navbar = () => {
         <Box cursor="pointer">
           <Text>Sign Up</Text>
         </Box>
-        {/* <Box cursor="pointer">
-          <Text>Login</Text>
-        </Box> */}
+        <Box cursor="pointer">
+          <Image
+            w="80px"
+            borderRadius={"50px 50px 50px 50px"}
+            src="https://i.postimg.cc/x16tr9LW/186889937-a920358d-9d24-41dd-b3e3-9de04f0082dc-removebg-preview.png"
+            alt="seal"
+          />
+        </Box>
+      </Box>
+      {/* nvbar for small screen */}
+      <Box
+        p={"5px"}
+        display={{ base: "flex", sm: "flex", md: "none", lg: "none" }}
+        justifyContent={"space-evenly"}
+        // justifyItems={"center"}
+      >
+        {/* logo */}
+        <Image
+          cursor="pointer"
+          w="13%"
+          src="https://i.postimg.cc/ZKMkM2G6/Online-Exchange-removebg-preview.png"
+          alt="logo"
+        />
+        <Box
+          border="1px solid blue"
+          bg="blue"
+          borderRadius="7px"
+          display="flex"
+          h={"42px"}
+          w={"60%"}
+          m="auto"
+
+          // w={{ base: "20%", sm: "20%", md: "30%", lg: "50%" }}
+        >
+          <Input
+            bg="white"
+            p="10px"
+            // h={"99%"}
+            placeholder="Find Cars, Bike, Mobile, Furniture"
+          />
+          <IconButton
+            // mb="3px"
+            // h="40px"
+            colorScheme="blue"
+            aria-label="Search database"
+            icon={<SearchIcon />}
+          />
+        </Box>
+        {/* hamburger icon */}
+        <Box margin={"auto"} border="0.5px solid #90CDF4" borderRadius={"3px"}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
+              <MenuItem>Sign Up</MenuItem>
+              {/* location option */}
+              {/* w="15%" h="80%" border="1px solid black" */}
+              <MenuItem>
+                <Box>
+                  <Select
+                    bg="whiteAlpha.800"
+                    w="100%"
+                    // cursor="pointer"
+                    placeholder="Patna"
+                  >
+                    <option value="delhi">Delhi</option>
+                    <option value="banglore">Banglore</option>
+                    <option value="patna">Patna</option>
+                  </Select>
+                </Box>
+              </MenuItem>
+              <MenuItem>SELL</MenuItem>
+            </MenuList>
+          </Menu>
+        </Box>
       </Box>
     </Box>
   );

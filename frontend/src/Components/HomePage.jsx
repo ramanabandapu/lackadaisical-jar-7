@@ -120,39 +120,78 @@ const HomePage = () => {
 
   return (
     <Box mt={"7px"} mb="7px ">
+      {/* big screen category */}
       <Box
         bg={"#ebeeef"}
-        display={"flex"}
+        display={{ base: "none", sm: "none", md: "none", lg: "flex" }}
         p="10px"
-        justifyContent={"space-between"}
+        gap={"5px"}
+        justifyContent={"space-evenly"}
       >
-        <Box ml="100px">Cars</Box>
-        <Box ml={"20px"} maxH={"30px"} noOfLines={1}>
+        <Box>Cars</Box>
+        <Box maxH={"30px"} noOfLines={1}>
           Motorcycles
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
           Mobile Phones
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
-          For Sale: House & Apartments
+          Apartments
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
-          OLX Renew (Mobile)
+          OLX Renew
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
           Scooters
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
-          Commercial & Other Vehicles
+          Commercial Vehicles
         </Box>
         <Box maxH={"30px"} noOfLines={1} mr="100px">
-          For Rent : House & Apartments
+          House & Apartments
+        </Box>
+      </Box>
+      {/* small and medium screen catecory container */}
+      <Box
+        display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
+        bg={"#ebeeef"}
+        gap={"4px"}
+        justifyContent="space-evenly"
+      >
+        <Box>Cars</Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Motorcycles
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Mobile Phones
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Apartments
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          OLX Renew
+        </Box>
+      </Box>
+      <hr />
+      <Box
+        display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
+        bg={"#ebeeef"}
+        justifyContent="space-evenly"
+      >
+        <Box maxW={"100px"} noOfLines={1}>
+          Scooters
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Commercial Vehicles
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          House & Apartments
         </Box>
       </Box>
       {/* Banner olx */}
       <Box m={"20px 0px 90px 0px"}>
         <Image
-          h={"160px"}
+          h={{ base: "60px", sm: "90px", md: "110px", lg: "140px" }}
           src="https://statics.olx.in/olxin/banners/hero_bg_in_v3@1x.png"
         />
       </Box>
@@ -256,7 +295,10 @@ const HomePage = () => {
                   src={elem.image}
                   alt="img"
                 />
-                <Heading textAlign={"left"}>{`₹ ${elem.price}`}</Heading>
+                <Heading
+                  size={"90px"}
+                  textAlign={"left"}
+                >{`${elem.price}`}</Heading>
                 <Text maxWidth={150} noOfLines={2}>
                   {elem.name}
                 </Text>

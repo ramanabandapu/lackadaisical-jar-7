@@ -14,7 +14,7 @@ const MainRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/page" element={<SingleProductPage />} />
->
+
         <Route path="/postad" element={<PostAd />} />
        
         <Route path="/car" element={<Car/>}/>
