@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const mixSchema = mongoose.Schema({
             name: String,
-            price:Number,
+            price:String,
             brand:String,
             location:String,
             description:String,

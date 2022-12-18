@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   background,
   border,
@@ -100,41 +100,98 @@ const HomePage = () => {
     },
   ];
 
+  const [mixdata, setMixdata] = useState([]);
+
+  const homepageData = async () => {
+    try {
+      let mix = await fetch("https://exuberant-pantsuit-bat.cyclic.app/bikes");
+      mix = await mix.json();
+
+      console.log(mix);
+      setMixdata(mix);
+    } catch (Err) {
+      console.log("Somthing went wrong");
+      console.log(Err);
+    }
+  };
+  useEffect(() => {
+    homepageData();
+  }, []);
+
   return (
     <Box mt={"7px"} mb="7px ">
+      {/* big screen category */}
       <Box
         bg={"#ebeeef"}
-        display={"flex"}
+        display={{ base: "none", sm: "none", md: "none", lg: "flex" }}
         p="10px"
-        justifyContent={"space-between"}
+        gap={"5px"}
+        justifyContent={"space-evenly"}
       >
-        <Box ml="100px">Cars</Box>
-        <Box ml={"20px"} maxH={"30px"} noOfLines={1}>
+        <Box>Cars</Box>
+        <Box maxH={"30px"} noOfLines={1}>
           Motorcycles
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
           Mobile Phones
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
-          For Sale: House & Apartments
+          Apartments
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
-          OLX Renew (Mobile)
+          OLX Renew
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
           Scooters
         </Box>
         <Box maxH={"30px"} noOfLines={1}>
-          Commercial & Other Vehicles
+          Commercial Vehicles
         </Box>
         <Box maxH={"30px"} noOfLines={1} mr="100px">
-          For Rent : House & Apartments
+          House & Apartments
+        </Box>
+      </Box>
+      {/* small and medium screen catecory container */}
+      <Box
+        display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
+        bg={"#ebeeef"}
+        gap={"4px"}
+        justifyContent="space-evenly"
+      >
+        <Box>Cars</Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Motorcycles
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Mobile Phones
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Apartments
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          OLX Renew
+        </Box>
+      </Box>
+      <hr />
+      <Box
+        display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
+        bg={"#ebeeef"}
+        justifyContent="space-evenly"
+      >
+        <Box maxW={"100px"} noOfLines={1}>
+          Scooters
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          Commercial Vehicles
+        </Box>
+        <Box maxW={"100px"} noOfLines={1}>
+          House & Apartments
         </Box>
       </Box>
       {/* Banner olx */}
       <Box m={"20px 0px 90px 0px"}>
         <Image
-          h={"160px"}
+          h={{ base: "60px", sm: "90px", md: "110px", lg: "140px" }}
           src="https://statics.olx.in/olxin/banners/hero_bg_in_v3@1x.png"
         />
       </Box>
@@ -228,43 +285,26 @@ const HomePage = () => {
       {/*-------------- Fresh recommendations----------------------------------------------------- */}
       <Box width={"80%"} m="auto" mt={"50px"}>
         <Heading textAlign={"left"}>Fresh recommendations</Heading>
-        {/* <Grid templateColumns="repeat(4, 1fr)" gap={6}>
-          {mobileData &&
-            mobileData.length > 0 &&
-            mobileData.map((elem) => {
-              return (
-                <GridItem
-                  // border={".5px solid gray"}
-                  // p={"15px"}
-                  boxShadow={
-                    "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;"
-                  }
-                >
-                  <Image m={"auto"} mt="10px" src={elem.imgUrl} />
-                  <Heading>{elem.name}</Heading>
-                  <Text>{elem.price}</Text>
-                </GridItem>
-              );
-            })}
-        </Grid> */}
-        <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} spacing={10}>
-          {mobileData &&
-            mobileData.length > 0 &&
-            mobileData.map((elem) => {
-              return (
-                <Box
-                  // border={".5px solid gray"}
-                  // p={"15px"}
-                  boxShadow={
-                    "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;"
-                  }
-                >
-                  <Image m={"auto"} mt="10px" src={elem.imgUrl} />
-                  <Heading>{elem.name}</Heading>
-                  <Text>{elem.price}</Text>
-                </Box>
-              );
-            })}
+        <SimpleGrid columns={{ base: 2, sm: 2, md: 3, lg: 4 }} spacing={10}>
+          {mixdata.map((elem) => {
+            return (
+              <Box key={elem._id} border={"1px solid gray"}>
+                <Image
+                  w={[200, 250, 280]}
+                  h={"200px"}
+                  src={elem.image}
+                  alt="img"
+                />
+                <Heading
+                  size={"90px"}
+                  textAlign={"left"}
+                >{`${elem.price}`}</Heading>
+                <Text maxWidth={150} noOfLines={2}>
+                  {elem.name}
+                </Text>
+              </Box>
+            );
+          })}
         </SimpleGrid>
       </Box>
     </Box>

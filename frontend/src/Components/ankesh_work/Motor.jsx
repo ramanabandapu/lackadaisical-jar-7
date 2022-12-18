@@ -14,7 +14,7 @@ const Motor=()=>{
 
   const getData=async()=>{
     try{
-      let data =await fetch(`http://localhost:3000/carData`)
+      let data =await fetch(`https://exuberant-pantsuit-bat.cyclic.app/bikes`)
       data=await data.json();
       console.log(data)
       setData(data)
@@ -68,15 +68,15 @@ const Motor=()=>{
         
         {/* Home section */}
 
-       <Text color='grey' marginLeft="-937px">Home/Bike</Text>
-       <Text as='b' fontSize='20px' marginLeft="-840px">Used Bikes in India</Text>
+       <Text color='grey' marginLeft="-1185px">Home/Bike</Text>
+       <Text as='b' fontSize='20px' marginLeft="-1087px">Used Bikes in India</Text>
       
       {/* DROP DOWN */}
 
       {/* First div */}
 
-      <Box  display="flex">
-         <Box  width="300px" >
+      <Box  className='d1'  display="flex">
+         <Box marginLeft="15px"  width="300px" >
            <Box className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
@@ -85,7 +85,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1" width="200px" textAlign="left">
+                  <Box as="b" flex="1" width="220px" textAlign="left">
                    All Categories
                    <br />
                    
@@ -131,7 +131,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1"  width="200px" textAlign="left">
+                  <Box as="b" flex="1"  width="220px" textAlign="left">
                    LOCATIONS
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -167,14 +167,14 @@ const Motor=()=>{
 
       {/* BRAND MODEL SECTION */}
 
-     <Text  fontSize='20px' marginTop="-5px" marginLeft="-45px">BRAND AND MODEL</Text>
-     <Input marginTop="9px" height="30px" width="250px" marginLeft="20px" placeholder='Search brand or model'/>
+     <Text  fontSize='20px' marginTop="-5px" marginLeft="-50px">BRAND AND MODEL</Text>
+     <Input marginTop="9px" height="30px" width="280px" marginLeft="30px" placeholder='Search brand or model'/>
 
     {/* POPULAR BRAND */}
 
-    <Text fontSize='20px' marginTop="-10px" marginLeft="-844px">POPULAR BRANDS</Text>       
+    <Text fontSize='20px' marginTop="20px" marginLeft="-80px">POPULAR BRAND</Text>       
       <Box marginLeft="30px" marginTop="10px">
-     <img width="250px"  src={Brand}/>
+     <img width="300px"  src={Brand}/>
      </Box>
     
     <br />
@@ -189,7 +189,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1"  width="200px"  textAlign="left">
+                  <Box as="b" flex="1"  width="220px"  textAlign="left">
                    ALL BRANDS
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -229,7 +229,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1"  width="200px"  textAlign="left">
+                  <Box as="b" flex="1"  width="220px"  textAlign="left">
                    ALL MODELS
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -265,7 +265,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1"  width="200px"  textAlign="left">
+                  <Box as="b" flex="1"  width="220px"  textAlign="left">
                   BUDGET
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -319,7 +319,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1"  width="200px"  textAlign="left">
+                  <Box as="b" flex="1"  width="220px"  textAlign="left">
                   YEAR
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -374,7 +374,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1"  width="200px"  textAlign="left">
+                  <Box as="b" flex="1"  width="220px"  textAlign="left">
                  KM DRIVEN
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -426,7 +426,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1"  width="200px"  textAlign="left">
+                  <Box as="b" flex="1"  width="220px"  textAlign="left">
                   TRANSMISSION
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -467,36 +467,9 @@ const Motor=()=>{
 
 
 
-        <Box   width="700px"  marginTop="70px"   marginLeft="50px">
-              <Box className='mainpage'>
-               {
-               data.map( Car =>
-                   <div key = {Car.id} >
-                    <br />
-                        <img  style={{height:"200px",width:"200px" }} src={Car.image}/>
-                        <br />
-                        <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box>
-                      
-                        <Box fontSize="15px" color='black' marginTop='-20px' marginLeft="-110px"> {Car.price}  </Box> 
-                       
-                       
-                        <Box marginTop="4px" fontSize="11px" color="grey" marginLeft="-113px"> {Car.distance}  </Box> 
-                       
-                         
-                        <Box fontSize="13px" color="black" marginLeft="-88px">  {Car.title}</Box> 
-                        <Box  fontSize="11px" color="grey.200"  marginLeft="-117px">   {Car.location}</Box> 
-                       <br />
-                       {/* <Button  colorScheme='teal' marginLeft="5px" marginTop="-5px" ><Link to="/Cart">Cart</Link></Button> */}
-                        
-                </div>
-                   )
-                 }
-         </Box>
-     </Box>
-  </Box>
-
-     <hr />
-      <Box marginLeft="350px" marginTop="-3422px" width="500px" className="wRdrop_down">
+        <Box   width="900px"  marginTop="70px"   marginLeft="85px">
+              {/* DROP DOWN UPPER */}
+          <Box marginLeft="-2px" marginTop="-60px"   width="500px" className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
             backgroundColor="white"
@@ -505,7 +478,7 @@ const Motor=()=>{
             >
               <h2>
                 <AccordionButton>
-                  <Box as="b" flex="1" textAlign="left">
+                  <Box as="b" flex="1"  width="200px"  textAlign="left">
                   SORT BY: Date Update
                    <br />
                   {/* <Box>Cars</Box>  */}
@@ -514,16 +487,16 @@ const Motor=()=>{
                 </AccordionButton>
               </h2>
               <AccordionPanel textAlign="left">
-              <Box fontSize="13px" marginTop="-14px"  width="240px" >   Date Published</Box>
+              <Box fontSize="13px" marginTop="-14px"  width="200px" >   Date Published</Box>
              
               </AccordionPanel>
                
               <AccordionPanel textAlign="left">
-              <Box fontSize="13px" marginTop="-14px"  width="240px" > Relevance</Box>
+              <Box fontSize="13px" marginTop="-14px"  width="200px" > Relevance</Box>
               </AccordionPanel>
               <AccordionPanel textAlign="left">
            
-              <Box fontSize="13px" marginTop="-14px"  width="240px"  >Price: Low to High</Box>
+              <Box fontSize="13px" marginTop="-14px"  width="200px"  >Price: Low to High</Box>
 
               </AccordionPanel>
 
@@ -550,6 +523,35 @@ const Motor=()=>{
 
 
 
+
+              <Box className='mainpage'>
+               {
+               data.map( Car =>
+                   <div key = {Car.id} >
+                    <br />
+                        <img  style={{height:"200px", width:"260px" }} src={Car.image}/>
+                        <br />
+                        {/* <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box> */}
+                      
+                        <Box fontSize="15px" color='black' marginTop='-20px' marginLeft="-200px"> {Car.price}  </Box> 
+                       
+                       
+                        <Box marginTop="4px" fontSize="12px" color="grey" marginLeft="-160px"> {Car.distance}  </Box> 
+                       
+                         
+                        <Box fontSize="13px" color="black" marginLeft="-140px">  {Car.title}</Box> 
+                        <Box  fontSize="12px" color="grey.200"  marginLeft="-105px">   {Car.location}</Box> 
+                       <br />
+                       {/* <Button  colorScheme='teal' marginLeft="5px" marginTop="-5px" ><Link to="/Cart">Cart</Link></Button> */}
+                        
+                </div>
+                   )
+                 }
+         </Box>
+     </Box>
+  </Box>
+
+   
     </Box>
     )
 }

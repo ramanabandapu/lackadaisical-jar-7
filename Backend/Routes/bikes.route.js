@@ -1,15 +1,11 @@
 const express = require("express")
-const {BikeModel} = require("../Models/Bike.model")
+const {bikeData} = require("../Controllers/bikes.controller")
 const bikesRouter = express.Router()
 
-bikesRouter.get("/bikes",async(req,res) =>{
-    try{
-        const bikedata = await  BikeModel.find({})
-        res.send(bikedata)
-     }
-    catch(err){
-        res.send({msg:"Somthing Wrong",error:err})
-    }
-})
+
+
+
+bikesRouter.get("/bikes",bikeData)
+
 
 module.exports={bikesRouter}

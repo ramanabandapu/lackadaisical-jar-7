@@ -1,18 +1,20 @@
+
+ 
 import { Text,Box,Flex,Image, Input, Accordion,AccordionIcon,AccordionButton,AccordionItem,AccordionPanel, Button } from '@chakra-ui/react'
 import "./Car.css"
 import Brand from "../ankesh_work/Image/Brand1.PNG"
-import { Link } from '@chakra-ui/react'
+ 
 import { FaRupeeSign} from 'react-icons/fa';
 
 import { useEffect, useState } from 'react'
-const Car=()=>{
+const Mobile=()=>{
 
   const [data, setData] = useState([])
 
 
   const getData=async()=>{
     try{
-      let data =await fetch(`https://exuberant-pantsuit-bat.cyclic.app/cars`)
+      let data =await fetch(`https://exuberant-pantsuit-bat.cyclic.app/mobiles`)
       data=await data.json();
       console.log(data)
       setData(data)
@@ -54,7 +56,7 @@ const Car=()=>{
            marginLeft="20px"
            width="70%"
            height="70%"
-           src='https://tpc.googlesyndication.com/simgad/7387030024057372507?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qktieZP_Sd13GBkR0FBdRnHsxbmqw'
+           src='https://tpc.googlesyndication.com/simgad/2104750638250792347'
            
              />
          </center>
@@ -66,15 +68,15 @@ const Car=()=>{
         
         {/* Home section */}
 
-       <Text color='grey' marginLeft="-1185px">Home</Text>
-       <Text as='b' fontSize='20px' marginLeft="-1060px">Used Cars in India</Text>
+       {/* <Text color='grey' marginLeft="-1185px">Mobile Phones</Text> */}
+       <Text as='b'  fontSize='20px' marginLeft="-1120px">Mobile Phones</Text>
       
       {/* DROP DOWN */}
 
       {/* First div */}
 
-      <Box className='d1' display="flex">
-         <Box marginLeft="30px" width="330px" >
+      <Box  className='d1'  display="flex">
+         <Box marginLeft="15px"  width="300px" >
            <Box className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
@@ -91,8 +93,18 @@ const Car=()=>{
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel textAlign="left">
-              Cars (3,28,194)
+              <AccordionPanel  marginTop="-7px"  textAlign="left">
+            Mobiles 
+              </AccordionPanel>
+              <AccordionPanel  marginTop="-15px"  textAlign="left">
+          Mobiles Phones
+              </AccordionPanel>
+              <AccordionPanel  marginTop="-15px"  textAlign="left">
+         Accessories
+              </AccordionPanel>
+
+              <AccordionPanel  marginTop="-15px"  textAlign="left">
+             Tablets
               </AccordionPanel>
             </AccordionItem>
 
@@ -155,14 +167,14 @@ const Car=()=>{
 
       {/* BRAND MODEL SECTION */}
 
-     <Text  fontSize='20px' marginTop="-5px" marginLeft="-79px">BRAND AND MODEL</Text>
-     <Input marginTop="9px" height="30px" width="280px" marginLeft="20px" placeholder='Search brand or model'/>
+     <Text  fontSize='20px' marginTop="-5px" marginLeft="-50px">BRAND AND MODEL</Text>
+     <Input marginTop="9px" height="30px" width="280px" marginLeft="30px" placeholder='Search brand or model'/>
 
     {/* POPULAR BRAND */}
 
-    <Text fontSize='20px'  marginTop="20px" marginLeft="-92px">POPULAR BRANDS</Text>       
+    <Text fontSize='20px' marginTop="20px" marginLeft="-80px">POPULAR BRAND</Text>       
       <Box marginLeft="30px" marginTop="10px">
-     <img width="286px"  src={Brand}/>
+     <img width="300px"  src={Brand}/>
      </Box>
     
     <br />
@@ -186,16 +198,19 @@ const Car=()=>{
                 </AccordionButton>
               </h2>
               <AccordionPanel marginTop="-8px"  textAlign="left">
-                Maruti Suzuki (1,06,919)
+       iPhone
               </AccordionPanel>
               <AccordionPanel marginTop="-15px"  textAlign="left">
-              Hyundai (55,904)
+             Samsung
               </AccordionPanel>
               <AccordionPanel marginTop="-15px"  textAlign="left">
-              Mahindra (28,779)
+             Mi
               </AccordionPanel>
               <AccordionPanel marginTop="-15px"  textAlign="left">
-               Honda (21,877)
+             Vivo
+              </AccordionPanel>
+              <AccordionPanel marginTop="-15px"  textAlign="left">
+             Realme
               </AccordionPanel>
             </AccordionItem>
 
@@ -223,16 +238,16 @@ const Car=()=>{
                 </AccordionButton>
               </h2>
               <AccordionPanel  marginTop="-8px"  textAlign="left">
-               A8l
+           One Plus
               </AccordionPanel>
               <AccordionPanel  marginTop="-15px"  textAlign="left">
-            Ambassador Ambassador
+            Honor
               </AccordionPanel>
               <AccordionPanel  marginTop="-15px"  textAlign="left">
-             Ashok Leyland Stile
+            Huawei
               </AccordionPanel>
               <AccordionPanel marginTop="-15px" textAlign="left">
-             Aston Martin DB11
+             Bajaj Platina
               </AccordionPanel>
             </AccordionItem>
 
@@ -263,15 +278,15 @@ const Car=()=>{
               </AccordionPanel>
               <AccordionPanel textAlign="left">
               <Box fontSize="13px"  marginTop="-8px" border="1px solid black" width="200px" height="30px">Below 1 Lac
-                 19,300+ cars</Box>
+                 19,300  phones </Box>
               </AccordionPanel>
               <AccordionPanel textAlign="left">
               <Box fontSize="13px"  marginTop="-8px" border="1px solid black" width="200px" height="30px"> 1 Lac - 2 Lac
-                 47,000+ cars</Box>
+                 47,000+ phones</Box>
               </AccordionPanel>
               <AccordionPanel textAlign="left">
               <Box fontSize="13px"  marginTop="-8px" border="1px solid black" width="200px" height="30px"> 2 Lac - 3 Lac
-                 47,800+ cars</Box>
+                 47,800+ phones</Box>
 
               </AccordionPanel>
 
@@ -294,53 +309,7 @@ const Car=()=>{
      <br />
 
 
-     {/* Year */}
-
-     <Box marginTop="-125px" className="wRdrop_down">
-          <Accordion defaultIndex={[0]} allowMultiple>
-            <AccordionItem
-              className="AccordionItem"
-              
-            >
-              <h2>
-                <AccordionButton>
-                  <Box as="b" flex="1"  width="220px"  textAlign="left">
-                  YEAR
-                   <br />
-                  {/* <Box>Cars</Box>  */}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel textAlign="left">
-              Choose from options below
-              </AccordionPanel>
-              <AccordionPanel textAlign="left">
-              <Box fontSize="13px" marginTop="-8px" border="1px solid black" width="200px" height="30px"> Under 3 Years
-25,700+ cars</Box>
-              </AccordionPanel>
-              <AccordionPanel textAlign="left">
-              <Box fontSize="13px" marginTop="-8px"  border="1px solid black" width="200px" height="30px"> Under 5 Years
-72,000+ cars</Box>
-              </AccordionPanel>
-              <AccordionPanel textAlign="left">
-            
-              <Box fontSize="13px"  marginTop="-8px" border="1px solid black" width="200px" height="30px"> Under 7 Years
-1,20,000+ cars</Box>
-
-              </AccordionPanel>
-
-              <AccordionPanel textAlign="left">
-              <Box fontSize="13px"  marginTop="-8px" border="1px solid black" width="200px" height="30px"> 7 Years and Above
-1,60,000+ cars</Box>
-              </AccordionPanel>
-
-            
-            </AccordionItem>
-
-            </Accordion>
-
-            </Box>
+      
 
 
 
@@ -349,113 +318,16 @@ const Car=()=>{
 
 
 
-     {/* Km driven */}
-
-     <Box marginTop="-125px" className="wRdrop_down">
-          <Accordion defaultIndex={[0]} allowMultiple>
-            <AccordionItem
-              className="AccordionItem"
-              
-            >
-              <h2>
-                <AccordionButton>
-                  <Box as="b" flex="1"  width="220px"  textAlign="left">
-                 KM DRIVEN
-                   <br />
-                  {/* <Box>Cars</Box>  */}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel textAlign="left">
-              Choose from options below(km)
-              </AccordionPanel>
-              <AccordionPanel textAlign="left">
-              <Box fontSize="13px"  marginTop="-8px" border="1px solid black" width="200px" height="30px">  Below 25000 km
-33,400+ cars</Box>
-              </AccordionPanel>
-              <AccordionPanel textAlign="left">
-              <Box fontSize="13px"  marginTop="-8px"  border="1px solid black" width="200px" height="30px">  25000 km - 50000 km
-42,900+  </Box>
-              </AccordionPanel>
-              <AccordionPanel textAlign="left">
-            
-              <Box fontSize="13px" marginTop="-8px" border="1px solid black" width="200px" height="30px"> 50000 km - 75000 km
-65,800+  </Box>
-
-              </AccordionPanel>
-
-              <AccordionPanel textAlign="left">
-              <Box fontSize="13px"  marginTop="-8px" border="1px solid black" width="200px" height="30px"> 75000 km - 100000 km
-58,100+   </Box>
-              </AccordionPanel>
-
-            
-            </AccordionItem>
-
-            </Accordion>
-
-            </Box>
  
-
-<br />
-<br /><br /><br /><br /><br />
-{/*  Trasmission */}
-
-
-<Box marginTop="-125px" className="wRdrop_down">
-          <Accordion defaultIndex={[0]} allowMultiple>
-            <AccordionItem
-              className="AccordionItem"
-              
-            >
-              <h2>
-                <AccordionButton>
-                  <Box as="b" flex="1"  width="220px"  textAlign="left">
-                  TRANSMISSION
-                   <br />
-                  {/* <Box>Cars</Box>  */}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel textAlign="left">
-              Choose from below options
-              </AccordionPanel>
-               
-              <AccordionPanel textAlign="left">
-              <Box fontSize="13px" marginTop="-8px"    border="1px solid black" width="200px" height="30px"> Automatic
-59,800+ cars</Box>
-              </AccordionPanel>
-              <AccordionPanel textAlign="left">
-           
-              <Box fontSize="13px" marginTop="-8px" border="1px solid black" width="200px" height="30px">    Manual
-2,50,000+ cars </Box>
-
-              </AccordionPanel>
-
-              
-
-            
-            </AccordionItem>
-
-            </Accordion>
-
-            </Box>
 
         </Box>
 
 
         {/* second div */}
 
-
-
-
-
-      <Box   width="900px"  marginTop="70px"   marginLeft="50px">
-
-         {/* DROP DOWN UPPER */}
-          <Box marginLeft="-2px" marginTop="-60px"   width="500px" className="wRdrop_down">
+    <Box  width="900px"  marginTop="70px"   marginLeft="85px">
+              {/* DROP DOWN UPPER */}
+          <Box  marginLeft="-2px" marginTop="-60px"   width="500px" className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
             backgroundColor="white"
@@ -507,25 +379,26 @@ const Car=()=>{
 
 
 
-         {/* MAP THE DATA */}
 
-         <Box  className='mainpage'>
+
+
+              <Box   className='page'>
                {
                data.map( Car =>
                    <div key = {Car.id} >
-                   <br />
-                        <img  style={{height:"200px",width:"260px" }} src={Car.image}/>
+                    <br />
+                        <img  style={{height:"200px", width:"260px" }} src={Car.image}/>
                         <br />
-                        <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box>
+                        {/* <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box> */}
                       
-                        <Box fontSize="15px" color='black' marginTop='-20px' marginLeft="-160px"> {Car.price}  </Box> 
+                        <Box fontSize="15px" color='black' marginTop='-20px' marginLeft="-200px"> {Car.price}  </Box> 
                        
                        
                         <Box marginTop="4px" fontSize="12px" color="grey" marginLeft="-160px"> {Car.distance}  </Box> 
                        
                          
                         <Box fontSize="13px" color="black" marginLeft="-140px">  {Car.title}</Box> 
-                        <Box  fontSize="12px" color="grey.200"  marginLeft="-60px">   {Car.location}</Box> 
+                        <Box  fontSize="12px" color="grey.200"  marginLeft="-30px">   {Car.location}</Box> 
                        <br />
                        {/* <Button  colorScheme='teal' marginLeft="5px" marginTop="-5px" ><Link to="/Cart">Cart</Link></Button> */}
                         
@@ -536,15 +409,8 @@ const Car=()=>{
      </Box>
   </Box>
 
-    
-     
+   
     </Box>
     )
 }
-export default Car
-
-
-
-
-
-
+export default Mobile
