@@ -1,4 +1,4 @@
-import { Box, Text, Image, AspectRatio, Divider } from "@chakra-ui/react";
+import { Box, Text,  AspectRatio, Divider } from "@chakra-ui/react";
 import React from "react";
 import SPImageCarousel from "../Components/SPImageCarousel";
 import { FiShare2, FiHeart, FiChevronRight } from "react-icons/fi";
