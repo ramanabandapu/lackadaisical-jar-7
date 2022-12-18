@@ -56,7 +56,7 @@ const Mobile=()=>{
            marginLeft="20px"
            width="70%"
            height="70%"
-           src='https://tpc.googlesyndication.com/simgad/4754367391051086379?sqp=4sqPyQQ7QjkqNxABHQAAtEIgASgBMAk4A0DwkwlYAWBfcAKAAQGIAQGdAQAAgD-oAQGwAYCt4gS4AV_FAS2ynT4&rs=AOga4qmj8Gf8-WfcfbOWpUHpWvLKyJdRhg'
+           src='https://tpc.googlesyndication.com/simgad/2104750638250792347'
            
              />
          </center>
@@ -75,7 +75,7 @@ const Mobile=()=>{
 
       {/* First div */}
 
-      <Box  display="flex">
+      <Box  className='d1'  display="flex">
          <Box marginLeft="15px"  width="300px" >
            <Box className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>

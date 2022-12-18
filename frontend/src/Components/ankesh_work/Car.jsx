@@ -12,7 +12,7 @@ const Car=()=>{
 
   const getData=async()=>{
     try{
-      let data =await fetch(`http://localhost:3000/carData`)
+      let data =await fetch(`https://exuberant-pantsuit-bat.cyclic.app/cars`)
       data=await data.json();
       console.log(data)
       setData(data)
@@ -73,7 +73,7 @@ const Car=()=>{
 
       {/* First div */}
 
-      <Box  display="flex">
+      <Box className='d1' display="flex">
          <Box marginLeft="30px" width="330px" >
            <Box className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
@@ -509,7 +509,7 @@ const Car=()=>{
 
          {/* MAP THE DATA */}
 
-         <Box className='mainpage'>
+         <Box  className='mainpage'>
                {
                data.map( Car =>
                    <div key = {Car.id} >
@@ -525,7 +525,7 @@ const Car=()=>{
                        
                          
                         <Box fontSize="13px" color="black" marginLeft="-140px">  {Car.title}</Box> 
-                        <Box  fontSize="12px" color="grey.200"  marginLeft="-160px">   {Car.location}</Box> 
+                        <Box  fontSize="12px" color="grey.200"  marginLeft="-60px">   {Car.location}</Box> 
                        <br />
                        {/* <Button  colorScheme='teal' marginLeft="5px" marginTop="-5px" ><Link to="/Cart">Cart</Link></Button> */}
                         
