@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const responsive = {
@@ -128,26 +129,37 @@ const HomePage = () => {
         gap={"5px"}
         justifyContent={"space-evenly"}
       >
-        <Box>Cars</Box>
-        <Box maxH={"30px"} noOfLines={1}>
-          Motorcycles
-        </Box>
-        <Box maxH={"30px"} noOfLines={1}>
-          Mobile Phones
-        </Box>
-        <Box maxH={"30px"} noOfLines={1}>
+        <Link to={"/car"}>
+          {" "}
+          <Box >Cars</Box>
+        </Link>
+
+        <Link to={"/motor"}>
+          <Box maxH={"30px"} noOfLines={1}>
+            Motorcycles
+          </Box>
+        </Link>
+
+        <Link to={"mobile"}>
+          {" "}
+          <Box maxH={"30px"} noOfLines={1}>
+            Mobile Phones
+          </Box>
+        </Link>
+
+        <Box cursor={"pointer"} maxH={"30px"} noOfLines={1}>
           Apartments
         </Box>
-        <Box maxH={"30px"} noOfLines={1}>
+        <Box  cursor={"pointer"} maxH={"30px"} noOfLines={1}>
           OLX Renew
         </Box>
-        <Box maxH={"30px"} noOfLines={1}>
+        <Box  cursor={"pointer"} maxH={"30px"} noOfLines={1}>
           Scooters
         </Box>
-        <Box maxH={"30px"} noOfLines={1}>
+        <Box  cursor={"pointer"} maxH={"30px"} noOfLines={1}>
           Commercial Vehicles
         </Box>
-        <Box maxH={"30px"} noOfLines={1} mr="100px">
+        <Box  cursor={"pointer"} maxH={"30px"} noOfLines={1} mr="100px">
           House & Apartments
         </Box>
       </Box>
@@ -157,18 +169,29 @@ const HomePage = () => {
         bg={"#ebeeef"}
         gap={"4px"}
         justifyContent="space-evenly"
+        cursor={"pointer"}
       >
-        <Box>Cars</Box>
-        <Box maxW={"100px"} noOfLines={1}>
-          Motorcycles
-        </Box>
-        <Box maxW={"100px"} noOfLines={1}>
-          Mobile Phones
-        </Box>
-        <Box maxW={"100px"} noOfLines={1}>
+        <Link to="/car">
+          <Box>Cars</Box>
+        </Link>
+        <Link to={"/motor"}>
+          {" "}
+          <Box  cursor={"pointer"} maxW={"100px"} noOfLines={1}>
+            Motorcycles
+          </Box>
+        </Link>
+
+        <Link to={"/mobile"}>
+          {" "}
+          <Box  cursor={"pointer"} maxW={"100px"} noOfLines={1}>
+            Mobile Phones
+          </Box>
+        </Link>
+
+        <Box  cursor={"pointer"} maxW={"100px"} noOfLines={1}>
           Apartments
         </Box>
-        <Box maxW={"100px"} noOfLines={1}>
+        <Box  cursor={"pointer"} maxW={"100px"} noOfLines={1}>
           OLX Renew
         </Box>
       </Box>
@@ -177,14 +200,15 @@ const HomePage = () => {
         display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
         bg={"#ebeeef"}
         justifyContent="space-evenly"
+        cursor={"pointer"}
       >
-        <Box maxW={"100px"} noOfLines={1}>
+        <Box  cursor={"pointer"} maxW={"100px"} noOfLines={1}>
           Scooters
         </Box>
-        <Box maxW={"100px"} noOfLines={1}>
+        <Box  cursor={"pointer"} maxW={"100px"} noOfLines={1}>
           Commercial Vehicles
         </Box>
-        <Box maxW={"100px"} noOfLines={1}>
+        <Box  cursor={"pointer"} maxW={"100px"} noOfLines={1}>
           House & Apartments
         </Box>
       </Box>
@@ -285,9 +309,11 @@ const HomePage = () => {
       {/*-------------- Fresh recommendations----------------------------------------------------- */}
       <Box width={"80%"} m="auto" mt={"50px"}>
         <Heading textAlign={"left"}>Fresh recommendations</Heading>
+      
         <SimpleGrid columns={{ base: 2, sm: 2, md: 3, lg: 4 }} spacing={10}>
           {mixdata.map((elem) => {
             return (
+              <Link to={`/bikes/${elem._id}`}>
               <Box key={elem._id} border={"1px solid gray"}>
                 <Image
                   w={[200, 250, 280]}
@@ -298,14 +324,16 @@ const HomePage = () => {
                 <Heading
                   size={"90px"}
                   textAlign={"left"}
-                >{`${elem.price}`}</Heading>
+                >{`${elem.price} `}</Heading>
                 <Text maxWidth={150} noOfLines={2}>
                   {elem.name}
                 </Text>
               </Box>
+              </Link>
             );
           })}
         </SimpleGrid>
+       
       </Box>
     </Box>
   );

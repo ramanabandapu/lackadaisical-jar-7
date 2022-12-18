@@ -1,7 +1,7 @@
 import { Text,Box,Flex,Image, Input, Accordion,AccordionIcon,AccordionButton,AccordionItem,AccordionPanel, Button } from '@chakra-ui/react'
 import "./Car.css"
 import Brand from "../ankesh_work/Image/Brand1.PNG"
-import { Link } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import { FaRupeeSign} from 'react-icons/fa';
 
 import { useEffect, useState } from 'react'
@@ -514,7 +514,9 @@ const Car=()=>{
                data.map( Car =>
                    <div key = {Car.id} >
                    <br />
+                     <Link to={`/cars/${Car._id}`}>
                         <img  style={{height:"200px",width:"260px" }} src={Car.image}/>
+                       </Link>  
                         <br />
                         <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box>
                       
@@ -528,7 +530,6 @@ const Car=()=>{
                         <Box  fontSize="12px" color="grey.200"  marginLeft="-60px">   {Car.location}</Box> 
                        <br />
                        {/* <Button  colorScheme='teal' marginLeft="5px" marginTop="-5px" ><Link to="/Cart">Cart</Link></Button> */}
-                        
                 </div>
                    )
                  }

@@ -12,15 +12,19 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link, Navigate } from "react-router-dom";
 
 export const SignupDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
     <Box>
-      <Text style={{ cursor: "pointer" }} ref={btnRef} onClick={onOpen} color= "blue">
-        SignUp
+    
+   
+      <Text style={{ cursor: "pointer" }} ref={btnRef} onClick={onOpen} color= "black" >
+        Signup
       </Text>
+    
       {/* Drawer Start */}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
