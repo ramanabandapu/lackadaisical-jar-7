@@ -4,9 +4,9 @@ import { BsFacebook, BsInstagram, BsPlayBtn, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <Box bg="#ebeeef">
+    <Box bg="#ebeeef" p={[0, 3, 3, 10]} mt={"50px"}>
       <Box
-        m="0px 150px 0px 150px"
+        ml={[0, 100, 150]}
         display="flex"
         padding={"10px"}
         justifyContent="space-between"
@@ -45,11 +45,16 @@ const Footer = () => {
           </Heading>
           <Text color={"rgba(0,47,52,.64)"}>Help</Text>
           <Text color={"rgba(0,47,52,.64)"}>Sitemap</Text>
-          <Text color={"rgba(0,47,52,.64)"}>Legal & Privacy information</Text>
+          <Text maxWidth={"15px"} noOfLines={2} color={"rgba(0,47,52,.64)"}>
+            Legal & Privacy information
+          </Text>
           <Text color={"rgba(0,47,52,.64)"}>Blog</Text>
           <Text color={"rgba(0,47,52,.64)"}>OLX Autos Sell Car</Text>
         </Box>
-        <Box lineHeight={"10px"}>
+        <Box
+          display={{ base: "none", sm: "none", md: "block", lg: "block" }}
+          lineHeight={"10px"}
+        >
           <Heading size="md">GET YOUR APP TODAY</Heading>
           <Box>
             <Heading m="10px 0px 10px" size="sm" textAlign="left">

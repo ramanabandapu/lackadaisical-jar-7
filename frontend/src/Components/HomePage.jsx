@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   background,
   border,
@@ -99,6 +99,24 @@ const HomePage = () => {
         "https://apollo-singapore.akamaized.net/v1/files/z3cykn85bzyr3-IN/image;s=300x600;q=60",
     },
   ];
+
+  const [mixdata, setMixdata] = useState([]);
+
+  const homepageData = async () => {
+    try {
+      let mix = await fetch("https://exuberant-pantsuit-bat.cyclic.app/bikes");
+      mix = await mix.json();
+
+      console.log(mix);
+      setMixdata(mix);
+    } catch (Err) {
+      console.log("Somthing went wrong");
+      console.log(Err);
+    }
+  };
+  useEffect(() => {
+    homepageData();
+  }, []);
 
   return (
     <Box mt={"7px"} mb="7px ">
@@ -228,43 +246,23 @@ const HomePage = () => {
       {/*-------------- Fresh recommendations----------------------------------------------------- */}
       <Box width={"80%"} m="auto" mt={"50px"}>
         <Heading textAlign={"left"}>Fresh recommendations</Heading>
-        {/* <Grid templateColumns="repeat(4, 1fr)" gap={6}>
-          {mobileData &&
-            mobileData.length > 0 &&
-            mobileData.map((elem) => {
-              return (
-                <GridItem
-                  // border={".5px solid gray"}
-                  // p={"15px"}
-                  boxShadow={
-                    "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;"
-                  }
-                >
-                  <Image m={"auto"} mt="10px" src={elem.imgUrl} />
-                  <Heading>{elem.name}</Heading>
-                  <Text>{elem.price}</Text>
-                </GridItem>
-              );
-            })}
-        </Grid> */}
-        <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} spacing={10}>
-          {mobileData &&
-            mobileData.length > 0 &&
-            mobileData.map((elem) => {
-              return (
-                <Box
-                  // border={".5px solid gray"}
-                  // p={"15px"}
-                  boxShadow={
-                    "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;"
-                  }
-                >
-                  <Image m={"auto"} mt="10px" src={elem.imgUrl} />
-                  <Heading>{elem.name}</Heading>
-                  <Text>{elem.price}</Text>
-                </Box>
-              );
-            })}
+        <SimpleGrid columns={{ base: 2, sm: 2, md: 3, lg: 4 }} spacing={10}>
+          {mixdata.map((elem) => {
+            return (
+              <Box key={elem._id} border={"1px solid gray"}>
+                <Image
+                  w={[200, 250, 280]}
+                  h={"200px"}
+                  src={elem.image}
+                  alt="img"
+                />
+                <Heading textAlign={"left"}>{`₹ ${elem.price}`}</Heading>
+                <Text maxWidth={150} noOfLines={2}>
+                  {elem.name}
+                </Text>
+              </Box>
+            );
+          })}
         </SimpleGrid>
       </Box>
     </Box>
