@@ -3,47 +3,51 @@ import React, { useEffect, useState } from "react";
 import SPImageCarousel from "../Components/SPImageCarousel";
 import { FiShare2, FiHeart, FiChevronRight } from "react-icons/fi";
 import { RxAvatar } from "react-icons/rx";
+import { SiSpeedtest } from "react-icons/si";
+import { RiContactsLine } from "react-icons/ri";
+import { GrLocation } from "react-icons/gr";
+import { AiOutlineCalendar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getMobileData } from "../Redux/AppReducer/action";
+import { getCarData } from "../Redux/AppReducer/action";
 
-const SingleProductPage = () => {
-
+const SingleProductCar = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  const [currentMobile, setCurrentMobile] = useState({});
-  const mobiles = useSelector((state) => state.AppReducer.mobileData);
+  const [currentCar, setCurrentCar] = useState({});
+  const cars = useSelector((state) => state.AppReducer.carData);
   useEffect(() => {
-    if (mobiles.length === 0) {
-      dispatch(getMobileData());
+    if (cars.length === 0) {
+      dispatch(getCarData());
     }
-  }, [dispatch, mobiles.length]);
+  }, [dispatch, cars.length]);
 
   useEffect(() => {
     if (id) {
-      const singlemobile = mobiles.find((item) => item._id === id);
-      singlemobile && setCurrentMobile(singlemobile);
+      const singlecar = cars.find((item) => item._id === id);
+      singlecar && setCurrentCar(singlecar);
     }
-  }, [id, mobiles]);
-  console.log(currentMobile);
+  }, [id, cars]);
+
+  const imgarry = [currentCar.image, currentCar.img1, currentCar.img2, currentCar.img3];
+  
 
   return (
     <Box w="100%" bg="#F2F4F5" paddingBottom="20px" paddingTop="20px">
+      <Box w="84%" margin="auto" marginTop="20px" marginBottom="20px">
+        <SPImageCarousel
+        arr={imgarry}
+        />
+      </Box>
       <Box
-        w="85%"
+        w="90%"
         margin="auto"
         display="flex"
         marginTop="20px"
         marginBottom="20px"
       >
-        <Box w="60%">
-          <Box>
-            <SPImageCarousel
-              img1={currentMobile.img1}
-              img2={currentMobile.image}
-            />
-          </Box>
+        <Box w="62%" px="3%">
           <Box
             bg="white"
             padding="5%"
@@ -51,33 +55,87 @@ const SingleProductPage = () => {
             borderRadius="3px"
           >
             <Box textAlign="left">
-              <Text fontSize="20px" fontWeight={700}>
-                Details:
+              <Text fontSize="30px" fontWeight={700} lineHeight="40px">
+                {currentCar.name}
               </Text>
-              <Box display="flex" marginTop="10px">
-                <Box w="25%" fontWeight={400} fontSize="14px" lineHeight="20px">
-                  Brand
+              <Box marginTop="10px">
+                <Box fontWeight={400} fontSize="15px" lineHeight="20px">
+                  {currentCar.title}
                 </Box>
-                <Box fontWeight={400} fontSize="14px" lineHeight="20px">
-                  {currentMobile.brand}
+                <Box display="flex" opacity={0.8} my="5px" lineHeight="20px">
+                  <Box my="2px">
+                    <SiSpeedtest fontSize="15px" />
+                  </Box>
+                  <Text fontSize="15px" letterSpacing="0.5px" mx="5px">
+                    {currentCar.distance}
+                  </Text>
                 </Box>
               </Box>
             </Box>
-            <Divider marginY="20px" />
+          </Box>
+          <Box
+            bg="white"
+            px="5%"
+            py="2%"
+            border="solid 1px gray"
+            borderRadius="3px"
+            marginTop="30px"
+          >
             <Box textAlign="left">
-              <Text fontSize="20px" fontWeight={700}>
-                Description:
+              <Text fontSize="24px" fontWeight={700} color="#406367">
+                overview
               </Text>
-              <Box display="flex" marginTop="10px">
-                <Box fontWeight={400} fontSize="14px" lineHeight="40px">
-                  <Text>{currentMobile.description}</Text>
+              <Divider my="15px" />
+              <Box
+                display="flex"
+                marginTop="10px"
+                justifyContent="space-between"
+              >
+                <Box display="flex">
+                  <Box fontSize="30px" p="1px">
+                    <RiContactsLine />
+                  </Box>
+                  <Box marginLeft="9px">
+                    <Text fontSize="14px" lineHeight="20px" opacity={0.74}>
+                      Owner
+                    </Text>
+                    <Text fontSize="18px" lineHeight={1.33} fontWeight={700}>
+                      {currentCar.owner}
+                    </Text>
+                  </Box>
+                </Box>
+                <Box display="flex">
+                  <Box fontSize="30px" p="1px">
+                    <GrLocation />
+                  </Box>
+                  <Box marginLeft="9px">
+                    <Text fontSize="14px" lineHeight="20px" opacity={0.74}>
+                      Location
+                    </Text>
+                    <Text fontSize="18px" lineHeight={1.33} fontWeight={700}>
+                      {currentCar.location}
+                    </Text>
+                  </Box>
+                </Box>
+                <Box display="flex">
+                  <Box fontSize="30px" p="1px">
+                    <AiOutlineCalendar />
+                  </Box>
+                  <Box marginLeft="9px">
+                    <Text fontSize="14px" lineHeight="20px" opacity={0.74}>
+                      Posting Date
+                    </Text>
+                    <Text fontSize="18px" lineHeight={1.33} fontWeight={700}>
+                      {currentCar.postive_date}
+                    </Text>
+                  </Box>
                 </Box>
               </Box>
             </Box>
           </Box>
         </Box>
 
-        <Box w="40%" padding="3%" textAlign="left" paddingTop={0}>
+        <Box w="38%" padding="3%" textAlign="left" paddingTop={0}>
           <Box
             bg="white"
             padding="5%"
@@ -87,7 +145,7 @@ const SingleProductPage = () => {
             <Box display="flex" justifyContent="space-between">
               <Box>
                 <Text fontSize="34px" fontWeight={700}>
-                  {currentMobile.price}
+                  ₹ {currentCar.price}
                 </Text>
               </Box>
               <Box display="flex" fontSize="28px" padding="3%" w="30%">
@@ -99,25 +157,18 @@ const SingleProductPage = () => {
                 </Box>
               </Box>
             </Box>
-            <Box>
-              <Text
-                fontSize="16px"
-                lineHeight="24px"
-                color="#406367"
-                fontWeight="500"
-              >
-                {currentMobile.name}
-              </Text>
-            </Box>
             <Box
-              display="flex"
-              color="#406367"
-              fontSize="15px"
-              justifyContent="space-between"
-              marginTop="24px"
+              textAlign="center"
+              fontSize="17px"
+              fontWeight="bold"
+              border="solid 2px black"
+              padding="10px"
+              borderRadius="5px"
+              marginTop="15px"
+              bg="black"
+              color="white"
             >
-              <Box>{currentMobile.location}</Box>
-              <Box>23 Nov</Box>
+              Make Offer
             </Box>
           </Box>
           <Box
@@ -184,7 +235,7 @@ const SingleProductPage = () => {
               </Text>
             </Box>
             <Box color="#406367" fontSize="13px" textAlign="left">
-              {currentMobile.location}
+              {currentCar.location}
             </Box>
             <Box>
               <Box w="100%" height="13rem" marginTop="10px">
@@ -200,4 +251,4 @@ const SingleProductPage = () => {
   );
 };
 
-export default SingleProductPage;
+export default SingleProductCar;

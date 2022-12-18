@@ -19,12 +19,12 @@ const settings = {
   slidesToScroll: 1,
 };
 
-export default function SPImageCarousel({img1, img2}) {
+export default function SPImageCarousel({arr}) {
   const [slider, setSlider] = useState();
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "10px" });
 
-  const cards = [img1, img2];
+  const cards = arr;
 
   return (
     <Box
