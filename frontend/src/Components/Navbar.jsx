@@ -30,12 +30,14 @@ const Navbar = () => {
         {/* Logo */}
 
         {/* <Link to="/"> */}
-        <Image
+          <Image
           cursor="pointer"
           w="5%"
           src="https://i.postimg.cc/ZKMkM2G6/Online-Exchange-removebg-preview.png"
           alt="logo"
         />
+       
+        
         {/* </Link> */}
         {/* </Box> */}
         {/* Location Box */}

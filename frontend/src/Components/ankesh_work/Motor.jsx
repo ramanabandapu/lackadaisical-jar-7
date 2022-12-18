@@ -7,6 +7,7 @@ import Brand from "../ankesh_work/Image/Brand1.PNG"
 import { FaRupeeSign} from 'react-icons/fa';
 
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 const Motor=()=>{
 
   const [data, setData] = useState([])
@@ -68,8 +69,8 @@ const Motor=()=>{
         
         {/* Home section */}
 
-       <Text color='grey' marginLeft="-1185px">Home/Bike</Text>
-       <Text as='b' fontSize='20px' marginLeft="-1087px">Used Bikes in India</Text>
+       <Text color='grey' marginLeft="-84rem">Home/Bike</Text>
+       <Text as='b' fontSize='20px' marginLeft="-78rem">Used Bikes in India</Text>
       
       {/* DROP DOWN */}
 
@@ -527,12 +528,14 @@ const Motor=()=>{
               <Box className='mainpage'>
                {
                data.map( Car =>
+                
                    <div key = {Car.id} >
                     <br />
+                    <Link to={`/bikes/${Car._id}`}>
                         <img  style={{height:"200px", width:"260px" }} src={Car.image}/>
                         <br />
                         {/* <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box> */}
-                      
+                        </Link>
                         <Box fontSize="15px" color='black' marginTop='-20px' marginLeft="-200px"> {Car.price}  </Box> 
                        
                        

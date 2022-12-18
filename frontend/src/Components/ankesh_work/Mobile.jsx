@@ -5,7 +5,7 @@ import "./Car.css"
 import Brand from "../ankesh_work/Image/Brand1.PNG"
  
 import { FaRupeeSign} from 'react-icons/fa';
-
+import {Link} from "react-router-dom"
 import { useEffect, useState } from 'react'
 const Mobile=()=>{
 
@@ -69,7 +69,7 @@ const Mobile=()=>{
         {/* Home section */}
 
        {/* <Text color='grey' marginLeft="-1185px">Mobile Phones</Text> */}
-       <Text as='b'  fontSize='20px' marginLeft="-1120px">Mobile Phones</Text>
+       <Text as='b'  fontSize='20px' marginLeft="-80rem">Mobile Phones</Text>
       
       {/* DROP DOWN */}
 
@@ -387,8 +387,10 @@ const Mobile=()=>{
                data.map( Car =>
                    <div key = {Car.id} >
                     <br />
+                   <Link to={`/mobiles/${Car._id}`}>
                         <img  style={{height:"200px", width:"260px" }} src={Car.image}/>
                         <br />
+                        </Link>
                         {/* <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box> */}
                       
                         <Box fontSize="15px" color='black' marginTop='-20px' marginLeft="-200px"> {Car.price}  </Box> 

@@ -66,8 +66,8 @@ const Car=()=>{
         
         {/* Home section */}
 
-       <Text color='grey' marginLeft="-1185px">Home</Text>
-       <Text as='b' fontSize='20px' marginLeft="-1060px">Used Cars in India</Text>
+       <Text color='grey' marginLeft="-84rem">Home</Text>
+       <Text as='b' fontSize='20px' marginLeft="-76.50rem">Used Cars in India</Text>
       
       {/* DROP DOWN */}
 
