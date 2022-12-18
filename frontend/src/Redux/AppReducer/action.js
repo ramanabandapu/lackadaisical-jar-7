@@ -49,7 +49,7 @@ const getBikeData = () => (dispatch) => {
   dispatch({ type: GET_BIKEDATA_REQUEST });
 
   return axios
-    .get("https://exuberant-pantsuit-bat.cyclic.app/mobiles")
+    .get("https://exuberant-pantsuit-bat.cyclic.app/bikes")
     .then((res) => {
       return dispatch({
         type: GET_BIKEDATA_SUCCESS,
