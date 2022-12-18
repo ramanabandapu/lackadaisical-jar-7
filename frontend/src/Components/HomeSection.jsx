@@ -123,7 +123,7 @@ const HomeSection = () => {
                           alignItems="center"
                           gap="20px"
                         >
-                          Don't have an account ? <SignupDrawer />
+                          Don't have an account? <SignupDrawer />
                         </Box>
                       </Box>
                     </Stack>
@@ -133,7 +133,7 @@ const HomeSection = () => {
               {/* Drawer End */}
             </Flex>
           </Flex>
-        ) : null}
+        ):null}
       </Box>
     </Box>
   );
