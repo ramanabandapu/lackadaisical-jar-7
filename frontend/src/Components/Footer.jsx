@@ -4,7 +4,7 @@ import { BsFacebook, BsInstagram, BsPlayBtn, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <Box bg="#ebeeef" p={[0, 3, 2, 10]} mt={"50px"}>
+    <Box  bg="#ebeeef" p={[0, 3, 2, 10]} mt={"50px"}>
       <Box
         ml={[0, 70, 120]}
         display="flex"

@@ -17,7 +17,15 @@ import { SignupDrawer } from "./SignupDrawer";
 
 const Navbar = () => {
   return (
-    <Box bg="#eff1f3" border="1px solid red">
+    <Box
+      pos="fixed"
+      top={0}
+      w="100%"
+      display={"block"}
+      overflow={"hidden"}
+      bg="#eff1f3"
+      border="1px solid red"
+    >
       <Box
         border="1px solid green"
         justifyContent="space-evenly"
