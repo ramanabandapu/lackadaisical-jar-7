@@ -6,20 +6,21 @@ import Mobile from "../Components/ankesh_work/Mobile";
 import Motor from "../Components/ankesh_work/Motor";
 import HomePage from "../Components/HomePage";
 import PostAd from "./PostAd";
-import SingleProductPage from "./SingleProductPage";
+import SingleProductMobile from "./SingleProductMobile";
+import SingleProductCar from "./SingleProductCar";
 
 const MainRoutes = () => {
   return (
     <Box>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/page/:id" element={<SingleProductPage />} />
+        <Route path="/mobiles/:id" element={<SingleProductMobile />} />
+        <Route path="/cars/:id" element={<SingleProductCar />} />
         <Route path="/postad" element={<PostAd />} />
-       
-        <Route path="/car" element={<Car/>}/>
-        <Route path="/motor" element={<Motor/>}/>
-        <Route path="/mobile" element={<Mobile/>}/>
 
+        <Route path="/car" element={<Car />} />
+        <Route path="/motor" element={<Motor />} />
+        <Route path="/mobile" element={<Mobile />} />
       </Routes>
     </Box>
   );
