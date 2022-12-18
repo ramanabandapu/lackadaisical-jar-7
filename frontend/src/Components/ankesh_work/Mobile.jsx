@@ -5,7 +5,7 @@ import "./Car.css"
 import Brand from "../ankesh_work/Image/Brand1.PNG"
  
 import { FaRupeeSign} from 'react-icons/fa';
-
+import {Link} from "react-router-dom"
 import { useEffect, useState } from 'react'
 const Mobile=()=>{
 
@@ -56,7 +56,7 @@ const Mobile=()=>{
            marginLeft="20px"
            width="70%"
            height="70%"
-           src='https://tpc.googlesyndication.com/simgad/4754367391051086379?sqp=4sqPyQQ7QjkqNxABHQAAtEIgASgBMAk4A0DwkwlYAWBfcAKAAQGIAQGdAQAAgD-oAQGwAYCt4gS4AV_FAS2ynT4&rs=AOga4qmj8Gf8-WfcfbOWpUHpWvLKyJdRhg'
+           src='https://tpc.googlesyndication.com/simgad/2104750638250792347'
            
              />
          </center>
@@ -69,13 +69,13 @@ const Mobile=()=>{
         {/* Home section */}
 
        {/* <Text color='grey' marginLeft="-1185px">Mobile Phones</Text> */}
-       <Text as='b'  fontSize='20px' marginLeft="-1120px">Mobile Phones</Text>
+       <Text as='b'  fontSize='20px' marginLeft="-80rem">Mobile Phones</Text>
       
       {/* DROP DOWN */}
 
       {/* First div */}
 
-      <Box  display="flex">
+      <Box  className='d1'  display="flex">
          <Box marginLeft="15px"  width="300px" >
            <Box className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
@@ -387,8 +387,10 @@ const Mobile=()=>{
                data.map( Car =>
                    <div key = {Car.id} >
                     <br />
+                   <Link to={`/mobiles/${Car._id}`}>
                         <img  style={{height:"200px", width:"260px" }} src={Car.image}/>
                         <br />
+                        </Link>
                         {/* <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box> */}
                       
                         <Box fontSize="15px" color='black' marginTop='-20px' marginLeft="-200px"> {Car.price}  </Box> 

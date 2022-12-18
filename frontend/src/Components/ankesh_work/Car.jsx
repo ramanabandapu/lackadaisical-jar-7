@@ -1,7 +1,7 @@
 import { Text,Box,Flex,Image, Input, Accordion,AccordionIcon,AccordionButton,AccordionItem,AccordionPanel, Button } from '@chakra-ui/react'
 import "./Car.css"
 import Brand from "../ankesh_work/Image/Brand1.PNG"
-import { Link } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import { FaRupeeSign} from 'react-icons/fa';
 
 import { useEffect, useState } from 'react'
@@ -12,7 +12,7 @@ const Car=()=>{
 
   const getData=async()=>{
     try{
-      let data =await fetch(`http://localhost:3000/carData`)
+      let data =await fetch(`https://exuberant-pantsuit-bat.cyclic.app/cars`)
       data=await data.json();
       console.log(data)
       setData(data)
@@ -66,14 +66,14 @@ const Car=()=>{
         
         {/* Home section */}
 
-       <Text color='grey' marginLeft="-1185px">Home</Text>
-       <Text as='b' fontSize='20px' marginLeft="-1060px">Used Cars in India</Text>
+       <Text color='grey' marginLeft="-84rem">Home</Text>
+       <Text as='b' fontSize='20px' marginLeft="-76.50rem">Used Cars in India</Text>
       
       {/* DROP DOWN */}
 
       {/* First div */}
 
-      <Box  display="flex">
+      <Box className='d1' display="flex">
          <Box marginLeft="30px" width="330px" >
            <Box className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
@@ -509,12 +509,14 @@ const Car=()=>{
 
          {/* MAP THE DATA */}
 
-         <Box className='mainpage'>
+         <Box  className='mainpage'>
                {
                data.map( Car =>
                    <div key = {Car.id} >
                    <br />
+                     <Link to={`/cars/${Car._id}`}>
                         <img  style={{height:"200px",width:"260px" }} src={Car.image}/>
+                       </Link>  
                         <br />
                         <Box marginTop="-10px" marginLeft="14px">  < FaRupeeSign/></Box>
                       
@@ -525,10 +527,9 @@ const Car=()=>{
                        
                          
                         <Box fontSize="13px" color="black" marginLeft="-140px">  {Car.title}</Box> 
-                        <Box  fontSize="12px" color="grey.200"  marginLeft="-160px">   {Car.location}</Box> 
+                        <Box  fontSize="12px" color="grey.200"  marginLeft="-60px">   {Car.location}</Box> 
                        <br />
                        {/* <Button  colorScheme='teal' marginLeft="5px" marginTop="-5px" ><Link to="/Cart">Cart</Link></Button> */}
-                        
                 </div>
                    )
                  }

@@ -12,6 +12,8 @@ import {
   MenuItem,
 } from "@chakra-ui/react";
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
+import { SignupDrawer } from "./SignupDrawer";
 
 const Navbar = () => {
   return (
@@ -34,12 +36,17 @@ const Navbar = () => {
       >
         {/* <Box border="1px solid teal"> */}
         {/* Logo */}
-        <Image
+
+        {/* <Link to="/"> */}
+          <Image
           cursor="pointer"
           w="5%"
           src="https://i.postimg.cc/ZKMkM2G6/Online-Exchange-removebg-preview.png"
           alt="logo"
         />
+       
+        
+        {/* </Link> */}
         {/* </Box> */}
         {/* Location Box */}
         <Box w="15%" h="80%" border="1px solid black">
@@ -77,7 +84,13 @@ const Navbar = () => {
           />
         </Box>
         <Box cursor="pointer">
-          <Text>Sign Up</Text>
+      
+          <Text>
+          <SignupDrawer/>
+           
+            </Text>
+          
+
         </Box>
         <Box cursor="pointer">
           <Image
