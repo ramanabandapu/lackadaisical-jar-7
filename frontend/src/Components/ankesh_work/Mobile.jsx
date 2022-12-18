@@ -75,7 +75,7 @@ const Mobile=()=>{
 
       {/* First div */}
 
-      <Box  display="flex">
+      <Box  className='d1'  display="flex">
          <Box marginLeft="15px"  width="300px" >
            <Box className="wRdrop_down">
           <Accordion defaultIndex={[0]} allowMultiple>
