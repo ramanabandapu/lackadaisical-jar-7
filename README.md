@@ -35,7 +35,8 @@ The OLX marketplace is a platform for buying and selling services and goods such
          - Sell Product
 
 <br/>
-
+<img src="https://i.postimg.cc/FsvfGq3f/Screenshot-112.png" />
+<!-- https://i.postimg.cc/5tz1h9Mf/Screenshot-113.png -->
 
 ## Contributors
 
