@@ -4,7 +4,7 @@ import {
   Image,
   Select,
   Input,
-  Text,
+ Flex,
   IconButton,
   Menu,
   MenuButton,
@@ -14,20 +14,21 @@ import {
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { SignupDrawer } from "./SignupDrawer";
+import { LoginDrawer } from "./LoginDrawer";
 
 const Navbar = () => {
   return (
     <Box
-      pos="fixed"
-      top={0}
+      // pos="fixed"
+      // top={0}
       w="100%"
       display={"block"}
       overflow={"hidden"}
       bg="#eff1f3"
-      border="1px solid red"
+   
     >
       <Box
-        border="1px solid green"
+      
         justifyContent="space-evenly"
         justifyItems="center"
         display={{ base: "none", sm: "none", md: "flex", lg: "flex" }}
@@ -85,10 +86,10 @@ const Navbar = () => {
         </Box>
         <Box cursor="pointer">
       
-          <Text>
+          <Flex gap={"25px"}>
           <SignupDrawer/>
-           
-            </Text>
+          <LoginDrawer/> 
+            </Flex>
           
 
         </Box>
@@ -151,6 +152,7 @@ const Navbar = () => {
             />
             <MenuList>
               <MenuItem>Sign Up</MenuItem>
+              <MenuItem>Login</MenuItem>
               {/* location option */}
               {/* w="15%" h="80%" border="1px solid black" */}
               <MenuItem>

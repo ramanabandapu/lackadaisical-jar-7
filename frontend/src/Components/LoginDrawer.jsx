@@ -22,7 +22,7 @@ export const LoginDrawer = () => {
         style={{ cursor: "pointer" }}
         ref={btnRef}
         onClick={onOpen}
-        color="blue"
+        color="black"
       >
         Login
       </Text>
