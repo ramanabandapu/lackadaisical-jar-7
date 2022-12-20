@@ -17,7 +17,7 @@ import { SignupDrawer } from "./SignupDrawer";
 
 const Navbar = () => {
   return (
-    <Box bg="#eff1f3" >
+    <Box bg="#eff1f3" border="1px solid red">
       <Box
         // border="1px solid green"
         justifyContent="space-evenly"
