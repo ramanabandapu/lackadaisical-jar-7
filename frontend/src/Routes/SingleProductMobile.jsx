@@ -26,6 +26,13 @@ const SingleProductMobile = () => {
       singlemobile && setCurrentMobile(singlemobile);
     }
   }, [id, mobiles]);
+
+
+  const userarray = ["Rahul", "Rohit", "Surya", "Ravi", "Viru", "Sachin", "Saurav", "Bhuvi", "Jassi", "Kuldeep"];
+  const n = Math.floor((Math.random() * 10) + 1);
+
+  const user = userarray[n]
+
   const imgarry = [
     currentMobile.image,
     currentMobile.img1,
@@ -151,7 +158,7 @@ const SingleProductMobile = () => {
               </Box>
               <Box textAlign="left">
                 <Text fontSize="16px" color="#002f34" fontWeight={700}>
-                  Seller
+                 {user}
                 </Text>
                 <Text fontSize="12px" fontWeight={400} lineHeight="18px">
                   Member since 5 days ago
