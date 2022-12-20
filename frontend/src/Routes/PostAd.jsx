@@ -7,44 +7,70 @@ import {
   InputLeftElement,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const PostAd = () => {
-    const [name, setName] = useState("");
-    const [price, setPrice] = useState("");
+  const toast = useToast();
+  const navigate = useNavigate();
 
-    const [description, setDescription] = useState("");
-    const [location, setLocation] = useState("");
-    const [brand, setBrand] = useState("");
-    const [image, setImage] = useState("");
-    const [img1, setImg1] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
 
-    const handleSubmit = () => {
-      const payload = {
-        name,
-        price,
-        brand,
-        location,
-        description,
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [brand, setBrand] = useState("");
+  const [image, setImage] = useState("");
+  const [img1, setImg1] = useState("");
 
-        image,
-        img1,
-      };
+  const handleSubmit = () => {
+    const payload = {
+      name,
+      price,
+      brand,
+      location,
+      description,
 
-      fetch("https://exuberant-pantsuit-bat.cyclic.app/mobiles", {
-        method: "POST",
-          body: JSON.stringify(payload),
-      })
-        .then((res) => res.json())
-        .then((res) => console.log(res))
-            .catch((err) => console.log(err));
-        console.log(payload);
+      image,
+      img1,
     };
 
+    axios
+      .post("https://exuberant-pantsuit-bat.cyclic.app/mobiles", payload)
+      .then((res) => {
+        console.log(res);
+        console.log(payload);
+        if (res.status=== 200) {
+          toast({
+            title: "Mobile Ad Posted.",
+            description: "Your ad is online.",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+            position: "top",
+          });
+        } else {
+          toast({
+            title: "Something went wrong.",
+            status: "error",
+            duration: 3000,
+            isClosable: true,
+            position: "top",
+          });
+        }
+      })
+      .catch((err) => console.log(err));
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+    
 
-
-
+    
+  };
 
   return (
     <Box padding="3%">
