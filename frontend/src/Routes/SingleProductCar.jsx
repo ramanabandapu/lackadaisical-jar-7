@@ -30,6 +30,10 @@ const SingleProductCar = () => {
     }
   }, [id, cars]);
 
+
+  const userarray = ["Rahul", "Rohit", "Surya", "Ravi", "Viru", "Sachin", "Saurav", "Bhuvi", "Jassi", "Kuldeep"];
+  let n = Math.floor((Math.random() * 10) + 1);
+
   const imgarry = [currentCar.image, currentCar.img1, currentCar.img2, currentCar.img3];
   
 

@@ -4,7 +4,7 @@ import {
   Image,
   Select,
   Input,
- Flex,
+  Flex,
   IconButton,
   Menu,
   MenuButton,
@@ -18,17 +18,20 @@ import { LoginDrawer } from "./LoginDrawer";
 
 const Navbar = () => {
   return (
-    <Box
-      // pos="fixed"
-      // top={0}
-      w="100%"
-      display={"block"}
-      overflow={"hidden"}
-      bg="#eff1f3"
-   
-    >
+    // <Box
+    //   //
+    //   // top={0}
+    //   w="100%"
+    //   display={"block"}
+    //   overflow={"hidden"}
+    //   bg="#eff1f3"
+
+    // >
+
+    <Box bg="#eff1f3" top={0} w={"100%"}>
       <Box
-      
+        // border="1px solid green"
+
         justifyContent="space-evenly"
         justifyItems="center"
         display={{ base: "none", sm: "none", md: "flex", lg: "flex" }}
@@ -38,15 +41,15 @@ const Navbar = () => {
         {/* <Box border="1px solid teal"> */}
         {/* Logo */}
 
-        {/* <Link to="/"> */}
+        <Link to="/" style={{ width: "75px" }}>
           <Image
-          cursor="pointer"
-          w="5%"
-          src="https://i.postimg.cc/ZKMkM2G6/Online-Exchange-removebg-preview.png"
-          alt="logo"
-        />
-       
-        
+            cursor="pointer"
+            // w="5%"
+            src="https://i.postimg.cc/ZKMkM2G6/Online-Exchange-removebg-preview.png"
+            alt="logo"
+          />
+        </Link>
+
         {/* </Link> */}
         {/* </Box> */}
         {/* Location Box */}
@@ -73,7 +76,7 @@ const Navbar = () => {
           <Input
             bg="white"
             p="15px"
-            h={"60%"}
+            h={"30%"}
             placeholder="Find Cars, Bike, Mobile, Furniture"
           />
           <IconButton
@@ -85,21 +88,20 @@ const Navbar = () => {
           />
         </Box>
         <Box cursor="pointer">
-      
           <Flex gap={"25px"}>
-          <SignupDrawer/>
-          <LoginDrawer/> 
-            </Flex>
-          
-
+            <SignupDrawer />
+            <LoginDrawer />
+          </Flex>
         </Box>
         <Box cursor="pointer">
-          <Image
-            w="80px"
-            borderRadius={"50px 50px 50px 50px"}
-            src="https://i.postimg.cc/x16tr9LW/186889937-a920358d-9d24-41dd-b3e3-9de04f0082dc-removebg-preview.png"
-            alt="seal"
-          />
+          <Link to={"/postad"}>
+            <Image
+              w="80px"
+              borderRadius={"50px 50px 50px 50px"}
+              src="https://i.postimg.cc/x16tr9LW/186889937-a920358d-9d24-41dd-b3e3-9de04f0082dc-removebg-preview.png"
+              alt="seal"
+            />
+          </Link>
         </Box>
       </Box>
       {/* nvbar for small screen */}
@@ -153,6 +155,7 @@ const Navbar = () => {
             <MenuList>
               <MenuItem>Sign Up</MenuItem>
               <MenuItem>Login</MenuItem>
+
               {/* location option */}
               {/* w="15%" h="80%" border="1px solid black" */}
               <MenuItem>
