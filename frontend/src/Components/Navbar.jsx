@@ -17,17 +17,9 @@ import { SignupDrawer } from "./SignupDrawer";
 
 const Navbar = () => {
   return (
-    <Box
-      pos="fixed"
-      top={0}
-      w="100%"
-      display={"block"}
-      overflow={"hidden"}
-      bg="#eff1f3"
-      border="1px solid red"
-    >
+    <Box bg="#eff1f3" border="1px solid red">
       <Box
-        border="1px solid green"
+        // border="1px solid green"
         justifyContent="space-evenly"
         justifyItems="center"
         display={{ base: "none", sm: "none", md: "flex", lg: "flex" }}
@@ -37,13 +29,14 @@ const Navbar = () => {
         {/* <Box border="1px solid teal"> */}
         {/* Logo */}
 
-        {/* <Link to="/"> */}
+        <Link to="/" style={{width:"75px"}} >
           <Image
           cursor="pointer"
-          w="5%"
+          // w="5%"
           src="https://i.postimg.cc/ZKMkM2G6/Online-Exchange-removebg-preview.png"
           alt="logo"
-        />
+          />
+        </Link>
        
         
         {/* </Link> */}
@@ -68,11 +61,12 @@ const Navbar = () => {
           borderRadius="7px"
           display="flex"
           w={{ base: "20%", sm: "20%", md: "30%", lg: "50%" }}
+          
         >
           <Input
             bg="white"
             p="15px"
-            h={"60%"}
+            h={"30%"}
             placeholder="Find Cars, Bike, Mobile, Furniture"
           />
           <IconButton
