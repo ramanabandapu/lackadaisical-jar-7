@@ -8,7 +8,7 @@ The OLX marketplace is a platform for buying and selling services and goods such
 
 <br/>
 
-## Deployed site » https://onlineexchange.netlify.app/
+## Deployed site » https://onlineexchangeolx.netlify.app/
 ## Deployed backend » https://exuberant-pantsuit-bat.cyclic.app/
 ### Original site » https://www.olx.in/
 <br />
