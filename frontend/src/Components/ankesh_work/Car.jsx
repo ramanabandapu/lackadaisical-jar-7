@@ -525,7 +525,7 @@ const Car=()=>{
                        
                          
                         <Box fontSize="13px" color="black" marginLeft="-140px">  {Car.title}</Box> 
-                        <Box  fontSize="12px" color="grey.200"  marginLeft="-60px">   {Car.location}</Box> 
+                        <Box  fontSize="12px" color="grey.200"  marginLeft="-120px">   {Car.location}</Box> 
                        <br />
                        {/* <Button  colorScheme='teal' marginLeft="5px" marginTop="-5px" ><Link to="/Cart">Cart</Link></Button> */}
                         
